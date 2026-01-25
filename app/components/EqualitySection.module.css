@@ -96,6 +96,10 @@
         font-size: 0.95rem;
         margin-bottom: 1.5rem;
     }
+
+    .buttonWrapper {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 600px) {
