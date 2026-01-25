@@ -15,6 +15,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 import ContactSection from './components/ContactSection';
 import ReferralSection from './components/ReferralSection';
 import WorkWithUsSection from './components/WorkWithUsSection';
+import Footer from './components/Footer';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -110,21 +111,7 @@ export default function Home() {
       <ContactSection />
 
       {/* Footer */}
-      <footer style={{ background: '#023e8a', color: 'white', padding: '4rem 2rem', marginTop: 'auto' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-          <div>
-            <h3 style={{ marginBottom: '1rem' }}>COMPACT PERSONNEL</h3>
-            <p style={{ maxWidth: '300px', opacity: 0.8 }}>
-              Helping adults with complex needs achieve incredible outcomes.
-            </p>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <strong>Get in Touch</strong>
-            <span>Email: info@compactpersonnel.co.uk</span>
-            <span>Phone: 0123 456 7890</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
