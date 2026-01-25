@@ -4,6 +4,7 @@ import WhyChooseHero from '../components/WhyChooseHero';
 import PhilosophySection from '../components/PhilosophySection';
 import OurValuesSection from '../components/OurValuesSection';
 import RegulatorySection from '../components/RegulatorySection';
+import EqualitySection from '../components/EqualitySection';
 
 export default function WhyChooseUsPage() {
     return (
@@ -13,6 +14,7 @@ export default function WhyChooseUsPage() {
             <PhilosophySection />
             <OurValuesSection />
             <RegulatorySection />
+            <EqualitySection />
             <Footer />
         </main>
     );

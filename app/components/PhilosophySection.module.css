@@ -165,27 +165,40 @@
 
 @media (max-width: 900px) {
     .philosophySection {
-        padding: 4rem 1.5rem;
+        padding: 3rem 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .header {
+        margin-bottom: 2.5rem;
     }
 
     .title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
     }
 
     .contentGrid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
+    }
+
+    .contentCard {
+        padding: 1.5rem;
     }
 
     .highlightCard {
-        padding: 2.5rem 2rem;
+        padding: 2rem 1.5rem;
     }
 
     .highlightCard .cardText {
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
 
     .decorativeQuote {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }

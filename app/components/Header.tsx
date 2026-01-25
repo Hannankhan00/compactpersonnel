@@ -3,14 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
 import styles from '../page.module.css';
 import InteractiveButton from './InteractiveButton';
 
-
-
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [expandedItems, setExpandedItems] = useState<number[]>([]);
 
     const navItems = [
         {
@@ -41,12 +40,25 @@ export default function Header() {
         { label: "Start a Referral", href: "#" }
     ];
 
+    const toggleExpanded = (index: number) => {
+        setExpandedItems(prev =>
+            prev.includes(index)
+                ? prev.filter(i => i !== index)
+                : [...prev, index]
+        );
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+        setExpandedItems([]);
+    };
+
     return (
         <>
             <header className={styles.header}>
                 <div className={styles.headerContainer}>
                     {/* Logo */}
-                    <div className={styles.logoContainer}>
+                    <Link href="/" className={styles.logoContainer}>
                         <div className={styles.logoIconImageWrapper}>
                             <Image
                                 src="/assets/icon.png"
@@ -60,7 +72,7 @@ export default function Header() {
                             <span className={styles.logoMain}>Compact</span>
                             <span className={styles.logoSub}>Personnel</span>
                         </div>
-                    </div>
+                    </Link>
 
                     {/* Desktop Navigation */}
                     <nav className={`${styles.nav} ${styles.desktopNav}`}>
@@ -92,29 +104,87 @@ export default function Header() {
                             variant="header"
                         />
                         <button
-                            className={styles.hamburger}
+                            className={`${styles.hamburger} ${isMenuOpen ? styles.hamburgerOpen : ''}`}
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Toggle menu"
                         >
-                            <span className={styles.hamburgerLine}></span>
-                            <span className={styles.hamburgerLine}></span>
-                            <span className={styles.hamburgerLine}></span>
+                            {isMenuOpen ? (
+                                <X size={24} />
+                            ) : (
+                                <>
+                                    <span className={styles.hamburgerLine}></span>
+                                    <span className={styles.hamburgerLine}></span>
+                                    <span className={styles.hamburgerLine}></span>
+                                </>
+                            )}
                         </button>
                     </div>
                 </div>
 
-                {/* Mobile Menu Dropdown */}
+                {/* Mobile Menu Sidebar */}
                 {isMenuOpen && (
-                    <div className={styles.mobileMenu}>
-                        {navItems.map((item, index) => (
-                            <Link key={index} href={item.href || '#'} className={styles.mobileNavItem}>
-                                {item.label}
-                            </Link>
-                        ))}
-                    </div>
+                    <>
+                        <div className={styles.mobileOverlay} onClick={closeMenu}></div>
+                        <div className={styles.mobileMenu}>
+                            <div className={styles.mobileMenuHeader}>
+                                <span className={styles.mobileMenuTitle}>Menu</span>
+                                <button className={styles.mobileCloseBtn} onClick={closeMenu}>
+                                    <X size={24} />
+                                </button>
+                            </div>
+                            <nav className={styles.mobileNav}>
+                                {navItems.map((item, index) => (
+                                    <div key={index} className={styles.mobileNavGroup}>
+                                        {item.dropdown ? (
+                                            <>
+                                                <button
+                                                    className={styles.mobileNavItem}
+                                                    onClick={() => toggleExpanded(index)}
+                                                >
+                                                    <span>{item.label}</span>
+                                                    <ChevronDown
+                                                        size={18}
+                                                        className={`${styles.mobileChevron} ${expandedItems.includes(index) ? styles.mobileChevronOpen : ''}`}
+                                                    />
+                                                </button>
+                                                {expandedItems.includes(index) && (
+                                                    <div className={styles.mobileSubMenu}>
+                                                        {item.dropdown.map((subItem, subIndex) => (
+                                                            <Link
+                                                                key={subIndex}
+                                                                href={subItem.href}
+                                                                className={styles.mobileSubItem}
+                                                                onClick={closeMenu}
+                                                            >
+                                                                {subItem.label}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </>
+                                        ) : (
+                                            <Link
+                                                href={item.href || '#'}
+                                                className={styles.mobileNavItem}
+                                                onClick={closeMenu}
+                                            >
+                                                <span>{item.label}</span>
+                                            </Link>
+                                        )}
+                                    </div>
+                                ))}
+                            </nav>
+                            <div className={styles.mobileMenuFooter}>
+                                <InteractiveButton
+                                    text="Contact Us"
+                                    href="#"
+                                    className={styles.mobileContactBtn}
+                                />
+                            </div>
+                        </div>
+                    </>
                 )}
             </header>
         </>
     );
 }
-
