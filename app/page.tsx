@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import HeroCards from './components/HeroCards';
 import styles from './page.module.css';
 
@@ -11,9 +12,14 @@ export default function Home() {
         <div className={styles.headerContainer}>
           {/* Logo */}
           <div className={styles.logoContainer}>
-            <div className={styles.logoIcon}>
-              <span style={{ color: 'var(--primary-dark)' }}>N</span>
-              <span style={{ color: 'var(--accent-color)' }}>Z</span>
+            <div className={styles.logoIconImageWrapper}>
+              <Image
+                src="/assets/icon.png"
+                alt="Compact Personnel Logo"
+                width={70}
+                height={70}
+                className={styles.logoImage}
+              />
             </div>
             <div className={styles.logoText}>
               <span className={styles.logoMain}>Compact</span>

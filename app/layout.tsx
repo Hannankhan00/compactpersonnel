@@ -11,6 +11,9 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Compact Personnel",
   description: "Helping adults with complex needs achieve incredible outcomes.",
+  icons: {
+    icon: '/assets/icon.png',
+  },
 };
 
 export default function RootLayout({

@@ -374,3 +374,14 @@
         display: none;
     }
 }
+
+/* Logo Image Wrapper */
+.logoIconImageWrapper {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    object-fit: contain;
+}
