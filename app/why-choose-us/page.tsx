@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import WhyChooseHero from '../components/WhyChooseHero';
 import PhilosophySection from '../components/PhilosophySection';
 import OurValuesSection from '../components/OurValuesSection';
+import RegulatorySection from '../components/RegulatorySection';
 
 export default function WhyChooseUsPage() {
     return (
@@ -11,6 +12,7 @@ export default function WhyChooseUsPage() {
             <WhyChooseHero />
             <PhilosophySection />
             <OurValuesSection />
+            <RegulatorySection />
             <Footer />
         </main>
     );
