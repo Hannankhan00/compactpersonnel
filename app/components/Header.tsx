@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../page.module.css';
+import InteractiveButton from './InteractiveButton';
+
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,20 +57,12 @@ export default function Header() {
                     </nav>
 
                     <div className={styles.headerActions}>
-                        <Link
+                        <InteractiveButton
+                            text="Contact Us"
                             href="#"
                             className={styles.contactButton}
-                            onMouseMove={(e) => {
-                                const rect = e.currentTarget.getBoundingClientRect();
-                                const x = e.clientX - rect.left;
-                                const y = e.clientY - rect.top;
-                                e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                                e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                            }}
-                        >
-                            <span className={styles.contactButtonText}>Contact Us</span>
-                            <div className={styles.contactButtonGlow}></div>
-                        </Link>
+                            variant="header"
+                        />
                         <button
                             className={styles.hamburger}
                             onClick={() => setIsMenuOpen(!isMenuOpen)}

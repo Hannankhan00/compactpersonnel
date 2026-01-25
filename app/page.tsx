@@ -11,6 +11,8 @@ import ApproachCarousel from './components/ApproachCarousel';
 import TrustedSection from './components/TrustedSection';
 import AchievementsSection from './components/AchievementsSection';
 import SuccessStoriesSection from './components/SuccessStoriesSection';
+import TestimonialsSection from './components/TestimonialsSection';
+import ContactSection from './components/ContactSection';
 import ReferralSection from './components/ReferralSection';
 import WorkWithUsSection from './components/WorkWithUsSection';
 import styles from './page.module.css';
@@ -100,6 +102,12 @@ export default function Home() {
 
       {/* Success Stories Section */}
       <SuccessStoriesSection />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
+
+      {/* Contact Section */}
+      <ContactSection />
 
       {/* Footer */}
       <footer style={{ background: '#023e8a', color: 'white', padding: '4rem 2rem', marginTop: 'auto' }}>

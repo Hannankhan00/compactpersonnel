@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
-import { ArrowRight } from 'lucide-react';
+import InteractiveButton from './InteractiveButton';
 
 export default function ReferralSection() {
     return (
@@ -39,28 +39,14 @@ export default function ReferralSection() {
                     we're here to support you every step of the way.
                 </motion.p>
 
-                <motion.button
-                    className={styles.trustedButton} // Reusing the yellow button style
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onMouseMove={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                        e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                    }}
                 >
-                    <span className={styles.trustedButtonText}>Start a Referral</span>
-                    <span className={styles.trustedButtonArrow}>
-                        <ArrowRight size={18} strokeWidth={2.5} />
-                    </span>
-                    <div className={styles.trustedButtonGlow}></div>
-                </motion.button>
+                    <InteractiveButton text="Start a Referral" />
+                </motion.div>
             </div>
         </section>
     );

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
 import { ArrowRight } from 'lucide-react';
+import InteractiveButton from './InteractiveButton';
 
 const stories = [
     {
@@ -43,22 +44,9 @@ export default function SuccessStoriesSection() {
         <section className={styles.successSection}>
             <div className={styles.successHeader}>
                 <h2 className={styles.successTitle}>Our Success Stories</h2>
-                <button
-                    className={styles.trustedButton}
-                    onMouseMove={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                        e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                    }}
-                >
-                    <span className={styles.trustedButtonText}>See all articles</span>
-                    <span className={styles.trustedButtonArrow}>
-                        <ArrowRight size={18} strokeWidth={2.5} />
-                    </span>
-                    <div className={styles.trustedButtonGlow}></div>
-                </button>
+                <div className={styles.successHeaderButton}>
+                    <InteractiveButton text="See all articles" />
+                </div>
             </div>
 
             {/* Desktop Grid */}
@@ -133,6 +121,10 @@ export default function SuccessStoriesSection() {
                         <ArrowRight size={20} />
                     </button>
                 </div>
+            </div>
+
+            <div className={styles.successButtonWrapper}>
+                <InteractiveButton text="See all articles" />
             </div>
         </section>
     );

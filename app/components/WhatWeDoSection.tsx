@@ -2,7 +2,7 @@
 
 import styles from '../page.module.css';
 import FadeIn from './FadeIn';
-import { ArrowRight } from 'lucide-react';
+import InteractiveButton from './InteractiveButton';
 
 export default function WhatWeDoSection() {
     return (
@@ -33,22 +33,10 @@ export default function WhatWeDoSection() {
             {/* Contact Us Button */}
             <FadeIn delay={0.5}>
                 <div className={styles.whatWeDoButtonWrapper}>
-                    <button
+                    <InteractiveButton
+                        text="Contact us"
                         className={styles.whatWeDoContactBtn}
-                        onMouseMove={(e) => {
-                            const rect = e.currentTarget.getBoundingClientRect();
-                            const x = e.clientX - rect.left;
-                            const y = e.clientY - rect.top;
-                            e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                            e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                        }}
-                    >
-                        <span className={styles.whatWeDoContactBtnText}>Contact us</span>
-                        <span className={styles.whatWeDoContactBtnArrow}>
-                            <ArrowRight size={18} strokeWidth={2.5} />
-                        </span>
-                        <div className={styles.whatWeDoContactBtnGlow}></div>
-                    </button>
+                    />
                 </div>
             </FadeIn>
         </section>

@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
-import { ArrowRight } from 'lucide-react';
+import InteractiveButton from './InteractiveButton';
+// ArrowRight removed as it is now inside InteractiveButton
 
 export default function TrustedSection() {
     return (
@@ -38,28 +39,14 @@ export default function TrustedSection() {
                         care that is safe, effective, and truly person-centered.
                     </motion.p>
 
-                    <motion.button
-                        className={styles.trustedButton}
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        onMouseMove={(e) => {
-                            const rect = e.currentTarget.getBoundingClientRect();
-                            const x = e.clientX - rect.left;
-                            const y = e.clientY - rect.top;
-                            e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                            e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                        }}
                     >
-                        <span className={styles.trustedButtonText}>Learn more</span>
-                        <span className={styles.trustedButtonArrow}>
-                            <ArrowRight size={18} strokeWidth={2.5} />
-                        </span>
-                        <div className={styles.trustedButtonGlow}></div>
-                    </motion.button>
+                        <InteractiveButton text="Learn more" />
+                    </motion.div>
                 </div>
             </div>
         </section>
