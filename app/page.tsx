@@ -1,65 +1,174 @@
-import Image from "next/image";
+import Link from 'next/link';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className={styles.container}>
+      {/* Navigation - Inline for now for 'Home Page' focus */}
+      {/* Header / Navigation */}
+      <header className={styles.header}>
+        <div className={styles.headerContainer}>
+          {/* Logo */}
+          <div className={styles.logoContainer}>
+            <div className={styles.logoIcon}>
+              <span style={{ color: 'var(--primary-dark)' }}>N</span>
+              <span style={{ color: 'var(--accent-color)' }}>Z</span>
+            </div>
+            <div className={styles.logoText}>
+              <span className={styles.logoMain}>zeno</span>
+              <span className={styles.logoSub}>LIMITED</span>
+            </div>
+          </div>
+
+          {/* Navigation Items */}
+          <nav className={styles.nav}>
+            <Link href="#" className={styles.navItem}>
+              About Us <span className={styles.chevron}>⌄</span>
+            </Link>
+            <Link href="#" className={styles.navItem}>
+              Our Services <span className={styles.chevron}>⌄</span>
+            </Link>
+            <Link href="#" className={styles.navItem}>
+              How we do it <span className={styles.chevron}>⌄</span>
+            </Link>
+            <Link href="#" className={styles.navItem}>
+              Family <span className={styles.chevron}>⌄</span>
+            </Link>
+            <Link href="#" className={styles.navItem}>
+              Work With Us <span className={styles.chevron}>⌄</span>
+            </Link>
+            <Link href="#" className={styles.navItem}>
+              Resources
+            </Link>
+            <Link href="#" className={styles.navItem}>
+              Start a Referral
+            </Link>
+          </nav>
+
+          {/* Contact Button */}
+          <Link href="#" className={styles.contactButton}>
+            Contact Us
+          </Link>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.title}>
+            We help adults with complex needs achieve <span className={styles.titleGradient}>incredible outcomes</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className={styles.subtitle}>
+            Promoting inclusion, equality, and independence in a safe, therapeutic, and nature-rich environment.
           </p>
+          <div className={styles.buttonGroup}>
+            <button className={styles.primaryButton}>Our Services</button>
+            <button className={styles.secondaryButton}>Contact Us</button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Services Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Our Services</h2>
+        <div className={styles.grid}>
+          {/* Card 1 */}
+          <div className={styles.card}>
+            <div>
+              <h3 className={styles.cardTitle}>Residential Care</h3>
+              <p className={styles.cardDescription}>
+                Small, nature-based units providing 24/7 care for people with learning disabilities.
+              </p>
+            </div>
+            <Link href="#" className={styles.cardLink}>
+              Learn more &rarr;
+            </Link>
+          </div>
+
+          {/* Card 2 */}
+          <div className={styles.card}>
+            <div>
+              <h3 className={styles.cardTitle}>Supported Living</h3>
+              <p className={styles.cardDescription}>
+                Empowering individuals with complex needs to live independently in their own homes.
+              </p>
+            </div>
+            <Link href="#" className={styles.cardLink}>
+              Learn more &rarr;
+            </Link>
+          </div>
+
+          {/* Card 3 */}
+          <div className={styles.card}>
+            <div>
+              <h3 className={styles.cardTitle}>Therapeutic Activities</h3>
+              <p className={styles.cardDescription}>
+                Bespoke weekly programmes including hiking, climbing, and swimming.
+              </p>
+            </div>
+            <Link href="#" className={styles.cardLink}>
+              Learn more &rarr;
+            </Link>
+          </div>
+
+          {/* Card 4 */}
+          <div className={styles.card}>
+            <div>
+              <h3 className={styles.cardTitle}>Rapid Review</h3>
+              <p className={styles.cardDescription}>
+                Supporting individuals at risk of placement collapse to avoid institutionalisation.
+              </p>
+            </div>
+            <Link href="#" className={styles.cardLink}>
+              Learn more &rarr;
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* About / Why Choose Us Section */}
+      <section className={styles.aboutSection}>
+        <div className={styles.aboutContent}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+            Why Choose Zeno Clone?
+          </h2>
+          <p style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
+            We believe in positive risk-taking to widen the world of those we support.
+            Our holistic philosophy utilizes strengths to develop new skills and meaningful relationships.
+          </p>
+          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ color: 'var(--accent-color)' }}>✔</span> Specialized Support
+            </li>
+            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ color: 'var(--accent-color)' }}>✔</span> Nature-focused
+            </li>
+            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ color: 'var(--accent-color)' }}>✔</span> Community Integration
+            </li>
+          </ul>
+        </div>
+        <div className={styles.aboutImage} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#aaa' }}>
+          Image: Active Support in Nature
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ background: '#023e8a', color: 'white', padding: '4rem 2rem', marginTop: 'auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+          <div>
+            <h3 style={{ marginBottom: '1rem' }}>ZENO CLONE</h3>
+            <p style={{ maxWidth: '300px', opacity: 0.8 }}>
+              Helping adults with complex needs achieve incredible outcomes.
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <strong>Get in Touch</strong>
+            <span>Email: info@zenoclone.co.uk</span>
+            <span>Phone: 0123 456 7890</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
