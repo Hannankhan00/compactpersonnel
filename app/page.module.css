@@ -74,10 +74,64 @@
     color: var(--primary-color);
 }
 
+.navGroup {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 1000;
+    pointer-events: none;
+    /* Prevent accidental clicks when hidden */
+}
+
+.navGroup:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: all;
+}
+
+.dropdownItem {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.dropdownItem:hover {
+    background: #f0f7fa;
+    color: var(--primary-dark);
+}
+
 .chevron {
-    font-size: 0.7rem;
-    font-weight: 700;
-    margin-top: 2px;
+    opacity: 0.7;
+    margin-top: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.navGroup:hover .chevron {
+    transform: rotate(180deg);
+    opacity: 1;
 }
 
 /* Contact Button */
@@ -324,6 +378,18 @@
 .missionText strong {
     color: var(--primary-color);
     font-weight: 600;
+}
+
+.missionButtonContainer {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.missionButtonWrapper {
+    /* Optional additional styling if needed */
 }
 
 @media (max-width: 900px) {

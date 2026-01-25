@@ -16,6 +16,7 @@ import ContactSection from './components/ContactSection';
 import ReferralSection from './components/ReferralSection';
 import WorkWithUsSection from './components/WorkWithUsSection';
 import Footer from './components/Footer';
+import InteractiveButton from './components/InteractiveButton';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -70,7 +71,14 @@ export default function Home() {
                 We specialise in supporting people to take part in community therapeutic activities, such as hiking in the Peak District, rock climbing, horse riding, cycling, swimming and boating. We will help you to take <strong>Positive Risks</strong> to grow your independence and live a fulfilling life.
               </p>
             </FadeIn>
+
           </div>
+
+          <FadeIn delay={0.5} className={styles.missionButtonContainer}>
+            <div className={styles.missionButtonWrapper}>
+              <InteractiveButton text="Get in touch" />
+            </div>
+          </FadeIn>
         </div>
       </section>
 

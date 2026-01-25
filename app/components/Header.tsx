@@ -3,12 +3,43 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ChevronDown } from 'lucide-react';
 import styles from '../page.module.css';
 import InteractiveButton from './InteractiveButton';
 
 
+
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const navItems = [
+        {
+            label: "About Us",
+            dropdown: [
+                { label: "Why Choose Us", href: "/why-choose-us" },
+                { label: "Our Service Model", href: "#" },
+                { label: "Meet The Team", href: "#" },
+                { label: "Our Locations", href: "#" }
+            ]
+        },
+        {
+            label: "Our Services",
+            dropdown: [
+                { label: "Supported Living", href: "#" },
+                { label: "Domiciliary Care", href: "#" },
+                { label: "Complex Care", href: "#" },
+                { label: "Mental Health Support", href: "#" },
+                { label: "Live in Care", href: "#" },
+                { label: "Respite Care", href: "#" },
+                { label: "Palliative & End of Life Care", href: "#" },
+                { label: "Hospital to Home", href: "#" }
+            ]
+        },
+        { label: "Complex Care", href: "#" },
+        { label: "Mental Health Support", href: "#" },
+        { label: "Resources", href: "#" },
+        { label: "Start a Referral", href: "#" }
+    ];
 
     return (
         <>
@@ -33,27 +64,24 @@ export default function Header() {
 
                     {/* Desktop Navigation */}
                     <nav className={`${styles.nav} ${styles.desktopNav}`}>
-                        <Link href="#" className={styles.navItem}>
-                            About Us <span className={styles.chevron}>⌄</span>
-                        </Link>
-                        <Link href="#" className={styles.navItem}>
-                            Our Services <span className={styles.chevron}>⌄</span>
-                        </Link>
-                        <Link href="#" className={styles.navItem}>
-                            How we do it <span className={styles.chevron}>⌄</span>
-                        </Link>
-                        <Link href="#" className={styles.navItem}>
-                            Family <span className={styles.chevron}>⌄</span>
-                        </Link>
-                        <Link href="#" className={styles.navItem}>
-                            Work With Us <span className={styles.chevron}>⌄</span>
-                        </Link>
-                        <Link href="#" className={styles.navItem}>
-                            Resources
-                        </Link>
-                        <Link href="#" className={styles.navItem}>
-                            Start a Referral
-                        </Link>
+                        {navItems.map((item, index) => (
+                            <div key={index} className={item.dropdown ? styles.navGroup : ''}>
+                                <Link href={item.href || '#'} className={styles.navItem}>
+                                    {item.label}
+                                    {item.dropdown && <ChevronDown size={14} className={styles.chevron} />}
+                                </Link>
+
+                                {item.dropdown && (
+                                    <div className={styles.dropdownMenu}>
+                                        {item.dropdown.map((subItem, subIndex) => (
+                                            <Link key={subIndex} href={subItem.href} className={styles.dropdownItem}>
+                                                {subItem.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </nav>
 
                     <div className={styles.headerActions}>
@@ -78,16 +106,15 @@ export default function Header() {
                 {/* Mobile Menu Dropdown */}
                 {isMenuOpen && (
                     <div className={styles.mobileMenu}>
-                        <Link href="#" className={styles.mobileNavItem}>About Us</Link>
-                        <Link href="#" className={styles.mobileNavItem}>Our Services</Link>
-                        <Link href="#" className={styles.mobileNavItem}>How we do it</Link>
-                        <Link href="#" className={styles.mobileNavItem}>Family</Link>
-                        <Link href="#" className={styles.mobileNavItem}>Work With Us</Link>
-                        <Link href="#" className={styles.mobileNavItem}>Resources</Link>
-                        <Link href="#" className={styles.mobileNavItem}>Start a Referral</Link>
+                        {navItems.map((item, index) => (
+                            <Link key={index} href={item.href || '#'} className={styles.mobileNavItem}>
+                                {item.label}
+                            </Link>
+                        ))}
                     </div>
                 )}
             </header>
         </>
     );
 }
+
