@@ -245,6 +245,79 @@
     z-index: 1;
 }
 
+/* Mission Section */
+.missionSection {
+    padding: 8rem 2rem;
+    background-color: var(--background-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.missionContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.missionHeadline {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--primary-dark);
+    position: relative;
+}
+
+/* Decorative accent for the headline */
+.missionHeadline::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 80px;
+    height: 6px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.missionContent {
+    padding-top: 1rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 2rem;
+}
+
+.missionText {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.missionText strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .missionContainer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .missionHeadline {
+        font-size: 2.5rem;
+    }
+
+    .missionContent {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding-top: 2rem;
+    }
+}
+
 /* Services Section */
 .section {
     padding: 6rem 1rem;
@@ -340,32 +413,158 @@
     overflow: hidden;
 }
 
+/* Header Actions (Button + Hamburger) */
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    grid-column: 3;
+    justify-self: end;
+}
+
+.hamburger {
+    display: none;
+    /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200;
+}
+
+.hamburgerLine {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-dark);
+    border-radius: 3px;
+}
+
+.mobileMenu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-top: 1px solid #eee;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: var(--shadow-md);
+}
+
+.mobileNavItem {
+    padding: 1rem 0;
+    border-bottom: 1px solid #f5f5f5;
+    color: var(--primary-dark);
+    font-weight: 500;
+    text-decoration: none;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
     .headerContainer {
-        flex-direction: column;
-        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        /* Keep row for Logo - Button/Ham */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
     }
 
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Hide Desktop Nav and Button */
+    .desktopNav {
+        display: none;
     }
 
+    /* Show Hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    .mobileMenu {
+        display: flex;
+    }
+
+    /* Contact Button in Header */
+    .contactButton {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        margin-right: 0.5rem;
+        width: auto;
+        max-width: none;
+        justify-self: auto;
+    }
+
+    .headerActions {
+        display: flex;
+        /* Ensure flex is active */
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* Hero Section Mobile Layout */
     .heroSection {
         height: auto;
-        min-height: 500px;
-        padding-bottom: 2rem;
+        min-height: auto;
+        /* Remove min-height constraint to let content flow */
+        margin: 1rem;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        /* Stack video and cards */
+        background-color: transparent;
+        /* Remove background if any */
+        padding-bottom: 0;
+    }
+
+    .heroVideoContainer {
+        position: relative;
+        /* Make relative so it takes space in flow */
+        height: 400px;
+        /* Fixed height for video on mobile */
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        /* Gap between video and cards */
     }
 
     .heroCardsContainer {
+        position: relative;
+        z-index: 1;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        padding: 0;
+        gap: 1rem;
+        /* Space between cards */
     }
 
     .glassCard {
         width: 100%;
-        max-width: 400px;
+        max-width: 100%;
+        background: #f0f4f8;
+        /* Opaque background for readability below video */
+        backdrop-filter: none;
+        /* remove expensive blur on mobile if opaque */
+        border: none;
+    }
+
+    .logoImage {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logoMain {
+        font-size: 1.2rem;
+    }
+
+    .logoSub {
+        font-size: 0.5rem;
     }
 }
 
@@ -373,10 +572,16 @@
     .aboutSection {
         grid-template-columns: 1fr;
         gap: 3rem;
+        padding: 4rem 1rem;
     }
 
-    .contactButton {
-        display: none;
+    .missionHeadline {
+        font-size: 2rem;
+    }
+
+    /* Adjust padding for smaller screens */
+    .missionSection {
+        padding: 4rem 1.5rem;
     }
 }
 
@@ -389,4 +594,229 @@
 
 .logoImage {
     object-fit: contain;
+}
+
+/* Service Carousel Section */
+.carouselSection {
+    padding: 6rem 2rem;
+    max-width: 1400px;
+    /* Wider for the carousel */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carouselHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+.getInTouchPill {
+    background-color: var(--button-accent);
+    color: var(--text-dark);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.getInTouchPill:hover {
+    transform: translateY(-2px);
+    background-color: var(--button-accent-hover);
+}
+
+.getInTouchPill span {
+    position: relative;
+    z-index: 2;
+    /* Keep text above glow */
+}
+
+.buttonGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(100px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.6),
+            transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.getInTouchPill:hover .buttonGlow {
+    opacity: 1;
+}
+
+.carouselControls {
+    display: flex;
+    gap: 1rem;
+}
+
+.arrowButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: var(--primary-dark);
+}
+
+.arrowButton:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+    color: white;
+    border-color: var(--primary-dark);
+}
+
+.arrowButton.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.carouselViewport {
+    overflow: hidden;
+    /* Hide the 4th card */
+    padding: 1rem;
+    /* Space for shadow/hover transform */
+    margin: -1rem;
+    /* Offset padding */
+}
+
+/* The track moves the cards */
+.carouselTrack {
+    display: flex;
+    gap: 2rem;
+    /* Calculated in JS for movement, but default flex behavior here */
+}
+
+.serviceCard {
+    flex: 0 0 calc(33.333% - 1.33rem);
+    /* 3 cards visible minus gap compensation */
+    height: 500px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.serviceCard:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.serviceCardOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.8) 90%);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.serviceCardTitle {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.serviceCardDesc {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.serviceCardBtn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.serviceCardBtn:hover {
+    background: white;
+    color: var(--primary-dark);
+    border-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .serviceCard {
+        flex: 0 0 calc(50% - 1rem);
+        /* 2 cards on tablet */
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carouselSection {
+        padding: 4rem 1rem;
+    }
+
+    .carouselHeader {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .carouselControls {
+        align-self: flex-end;
+        /* Put arrows on right */
+    }
+
+    .serviceCard {
+        flex: 0 0 100%;
+        /* 1 card on mobile */
+        height: 400px;
+    }
+
+    .carouselTrack {
+        /* On mobile, we might want natural scroll or keep the JS slide? 
+           The JS slide logic needs to update flex-basis or transform pixels.
+           Currently JS relies on assumed 33%. 
+           We will fix this by simply using 100% width on mobile in JS? 
+           Actually, let's keep it simple: overflow scroll on mobile */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1rem;
+    }
+
+    .serviceCard {
+        scroll-snap-align: center;
+    }
 }

@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import HeroCards from './components/HeroCards';
+import Header from './components/Header';
+import FadeIn from './components/FadeIn';
+import ServiceCarousel from './components/ServiceCarousel';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -8,56 +11,8 @@ export default function Home() {
     <div className={styles.container}>
       {/* Navigation - Inline for now for 'Home Page' focus */}
       {/* Header / Navigation */}
-      <header className={styles.header}>
-        <div className={styles.headerContainer}>
-          {/* Logo */}
-          <div className={styles.logoContainer}>
-            <div className={styles.logoIconImageWrapper}>
-              <Image
-                src="/assets/icon.png"
-                alt="Compact Personnel Logo"
-                width={70}
-                height={70}
-                className={styles.logoImage}
-              />
-            </div>
-            <div className={styles.logoText}>
-              <span className={styles.logoMain}>Compact</span>
-              <span className={styles.logoSub}>Personnel</span>
-            </div>
-          </div>
-
-          {/* Navigation Items */}
-          <nav className={styles.nav}>
-            <Link href="#" className={styles.navItem}>
-              About Us <span className={styles.chevron}>⌄</span>
-            </Link>
-            <Link href="#" className={styles.navItem}>
-              Our Services <span className={styles.chevron}>⌄</span>
-            </Link>
-            <Link href="#" className={styles.navItem}>
-              How we do it <span className={styles.chevron}>⌄</span>
-            </Link>
-            <Link href="#" className={styles.navItem}>
-              Family <span className={styles.chevron}>⌄</span>
-            </Link>
-            <Link href="#" className={styles.navItem}>
-              Work With Us <span className={styles.chevron}>⌄</span>
-            </Link>
-            <Link href="#" className={styles.navItem}>
-              Resources
-            </Link>
-            <Link href="#" className={styles.navItem}>
-              Start a Referral
-            </Link>
-          </nav>
-
-          {/* Contact Button */}
-          <Link href="#" className={styles.contactButton}>
-            Contact Us
-          </Link>
-        </div>
-      </header>
+      {/* Navigation - Inline for now for 'Home Page' focus */}
+      <Header />
 
       {/* Hero Section */}
       {/* Hero Section */}
@@ -81,63 +36,34 @@ export default function Home() {
         <HeroCards />
       </section>
 
-      {/* Services Section */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Our Services</h2>
-        <div className={styles.grid}>
-          {/* Card 1 */}
-          <div className={styles.card}>
-            <div>
-              <h3 className={styles.cardTitle}>Residential Care</h3>
-              <p className={styles.cardDescription}>
-                Small, nature-based units providing 24/7 care for people with learning disabilities.
+      {/* Mission Section */}
+      <section className={styles.missionSection}>
+        <div className={styles.missionContainer}>
+          <FadeIn className={styles.missionHeadline}>
+            We help adults with complex needs achieve incredible outcomes in fun, therapeutic settings.
+          </FadeIn>
+          <div className={styles.missionContent}>
+            <FadeIn delay={0.2}>
+              <p className={styles.missionText}>
+                We promote and support independence, choice and social inclusion for people with a <strong>Learning Disability</strong> or who are <strong>Neurodiverse</strong> within a supportive, safe, social and stimulating network.
               </p>
-            </div>
-            <Link href="#" className={styles.cardLink}>
-              Learn more &rarr;
-            </Link>
-          </div>
-
-          {/* Card 2 */}
-          <div className={styles.card}>
-            <div>
-              <h3 className={styles.cardTitle}>Supported Living</h3>
-              <p className={styles.cardDescription}>
-                Empowering individuals with complex needs to live independently in their own homes.
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <p className={styles.missionText}>
+                Our model for your Support will be designed around your needs increasing independence, choice and promoting self-determination.
               </p>
-            </div>
-            <Link href="#" className={styles.cardLink}>
-              Learn more &rarr;
-            </Link>
-          </div>
-
-          {/* Card 3 */}
-          <div className={styles.card}>
-            <div>
-              <h3 className={styles.cardTitle}>Therapeutic Activities</h3>
-              <p className={styles.cardDescription}>
-                Bespoke weekly programmes including hiking, climbing, and swimming.
+            </FadeIn>
+            <FadeIn delay={0.4}>
+              <p className={styles.missionText}>
+                We specialise in supporting people to take part in community therapeutic activities, such as hiking in the Peak District, rock climbing, horse riding, cycling, swimming and boating. We will help you to take <strong>Positive Risks</strong> to grow your independence and live a fulfilling life.
               </p>
-            </div>
-            <Link href="#" className={styles.cardLink}>
-              Learn more &rarr;
-            </Link>
-          </div>
-
-          {/* Card 4 */}
-          <div className={styles.card}>
-            <div>
-              <h3 className={styles.cardTitle}>Rapid Review</h3>
-              <p className={styles.cardDescription}>
-                Supporting individuals at risk of placement collapse to avoid institutionalisation.
-              </p>
-            </div>
-            <Link href="#" className={styles.cardLink}>
-              Learn more &rarr;
-            </Link>
+            </FadeIn>
           </div>
         </div>
       </section>
+
+      {/* Services Carousel Section */}
+      <ServiceCarousel />
 
       {/* About / Why Choose Us Section */}
       <section className={styles.aboutSection}>
