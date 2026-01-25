@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Easing } from 'framer-motion';
 import styles from '../page.module.css';
 
 export default function WhatWeDoSection() {
@@ -20,7 +20,7 @@ export default function WhatWeDoSection() {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, ease: "easeOut" }
+            transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as Easing }
         }
     };
 
@@ -38,7 +38,7 @@ export default function WhatWeDoSection() {
                     className={styles.whatWeDoAccent}
                     initial={{ width: 0 }}
                     whileInView={{ width: "80px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
                     viewport={{ once: true }}
                 />
 
@@ -85,7 +85,7 @@ export default function WhatWeDoSection() {
                 <motion.div
                     className={styles.whatWeDoDecoCircle}
                     initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 0.1 }}
+                    whileInView={{ scale: 1, opacity: 0.08 }}
                     transition={{ duration: 1, delay: 0.5 }}
                     viewport={{ once: true }}
                 />

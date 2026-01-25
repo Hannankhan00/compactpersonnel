@@ -54,10 +54,20 @@ export default function Header() {
                         </Link>
                     </nav>
 
-                    {/* Actions (Contact + Hamburger) */}
                     <div className={styles.headerActions}>
-                        <Link href="#" className={styles.contactButton}>
-                            Contact Us
+                        <Link
+                            href="#"
+                            className={styles.contactButton}
+                            onMouseMove={(e) => {
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                const x = e.clientX - rect.left;
+                                const y = e.clientY - rect.top;
+                                e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                                e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                            }}
+                        >
+                            <span className={styles.contactButtonText}>Contact Us</span>
+                            <div className={styles.contactButtonGlow}></div>
                         </Link>
                         <button
                             className={styles.hamburger}

@@ -6,6 +6,7 @@ import FadeIn from './components/FadeIn';
 import ServiceCarousel from './components/ServiceCarousel';
 import Partners from './components/Partners';
 import WhyChooseSection from './components/WhyChooseSection';
+import WhatWeDoSection from './components/WhatWeDoSection';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -72,6 +73,9 @@ export default function Home() {
 
       {/* Why Choose Section */}
       <WhyChooseSection />
+
+      {/* What We Do Section */}
+      <WhatWeDoSection />
 
       {/* Footer */}
       <footer style={{ background: '#023e8a', color: 'white', padding: '4rem 2rem', marginTop: 'auto' }}>
