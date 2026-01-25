@@ -706,7 +706,8 @@
 .carouselTrack {
     display: flex;
     gap: 2rem;
-    /* Calculated in JS for movement, but default flex behavior here */
+    --slide-width: 33.333%;
+    /* Default for Desktop */
 }
 
 .serviceCard {
@@ -774,6 +775,36 @@
     border-color: white;
 }
 
+/* Mobile Controls (base styles - hidden on desktop) */
+.mobileControlsWrapper {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
+
+.carouselDots {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+.activeDot {
+    background-color: var(--primary-dark);
+    transform: scale(1.2);
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .serviceCard {
@@ -806,17 +837,263 @@
     }
 
     .carouselTrack {
-        /* On mobile, we might want natural scroll or keep the JS slide? 
-           The JS slide logic needs to update flex-basis or transform pixels.
-           Currently JS relies on assumed 33%. 
-           We will fix this by simply using 100% width on mobile in JS? 
-           Actually, let's keep it simple: overflow scroll on mobile */
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 1rem;
+        /* Revert to JS sliding for consistency */
+        overflow: visible;
+        --slide-width: 100%;
     }
 
     .serviceCard {
-        scroll-snap-align: center;
+        flex: 0 0 100%;
+        /* 1 card on mobile */
+        height: 500px;
+        /* Keep height tall enough */
+        scroll-snap-align: none;
+    }
+
+    .desktopControls {
+        display: none !important;
+    }
+
+    .mobileControlsWrapper {
+        display: flex;
+    }
+}
+
+/* Why Choose Section */
+.whyChooseSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    min-height: 600px;
+}
+
+.whyChooseContent {
+    background: linear-gradient(135deg, #e8d5e7 0%, #f0e6f0 100%);
+    padding: 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 30px 0 0 30px;
+}
+
+.whyChooseTitle {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.whyChooseText {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+}
+
+.whyChooseButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var(--button-accent);
+    color: var(--text-dark);
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    min-width: 200px;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.whyChooseButton:hover {
+    transform: translateY(-2px);
+}
+
+.whyChooseButtonText {
+    position: relative;
+    z-index: 2;
+}
+
+.whyChooseButtonArrow {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.whyChooseButtonGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(120px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.5),
+            transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.whyChooseButton:hover .whyChooseButtonGlow {
+    opacity: 1;
+}
+
+.whyChooseImage {
+    border-radius: 0 30px 30px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.whyChooseImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    background: linear-gradient(135deg, #87CEEB 0%, #98D8C8 50%, #7CB342 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Why Choose Section - Responsive */
+@media (max-width: 900px) {
+    .whyChooseSection {
+        grid-template-columns: 1fr;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .whyChooseContent {
+        order: 2;
+        /* Text below image on mobile */
+        border-radius: 0 0 30px 30px;
+        padding: 3rem 2rem;
+    }
+
+    .whyChooseImage {
+        order: 1;
+        /* Image on top */
+        border-radius: 30px 30px 0 0;
+    }
+
+    .whyChooseImagePlaceholder {
+        min-height: 350px;
+    }
+
+    .whyChooseTitle {
+        font-size: 2rem;
+    }
+
+    .whyChooseText {
+        font-size: 1rem;
+    }
+
+    .whyChooseButton {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Partners Section */
+.partnersSection {
+    padding: 4rem 0 8rem;
+    /* No side padding */
+    background-color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.partnersTitle {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+.partnersWindow {
+    max-width: 100%;
+    /* Full width */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    /* Add fade mask on edges for professional look */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.partnersTrack {
+    display: flex;
+    width: 100%;
+    --partner-slide-pct: 20%;
+    /* Desktop: 5 items */
+}
+
+.partnerLogo {
+    flex: 0 0 var(--partner-slide-pct);
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoPlaceholder {
+    height: 80px;
+    width: 100%;
+    /* border: 1px dashed #ccc; */
+    /* Debug border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fdfdfd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #666;
+    /* grayscale until hover? */
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.logoPlaceholder:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .partnersTrack {
+        --partner-slide-pct: 33.333%;
+        /* 3 items */
+    }
+}
+
+@media (max-width: 600px) {
+    .partnersTrack {
+        --partner-slide-pct: 50%;
+        /* 2 items */
     }
 }

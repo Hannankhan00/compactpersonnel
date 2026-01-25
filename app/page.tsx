@@ -4,6 +4,8 @@ import HeroCards from './components/HeroCards';
 import Header from './components/Header';
 import FadeIn from './components/FadeIn';
 import ServiceCarousel from './components/ServiceCarousel';
+import Partners from './components/Partners';
+import WhyChooseSection from './components/WhyChooseSection';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -65,32 +67,11 @@ export default function Home() {
       {/* Services Carousel Section */}
       <ServiceCarousel />
 
-      {/* About / Why Choose Us Section */}
-      <section className={styles.aboutSection}>
-        <div className={styles.aboutContent}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-            Why Choose Compact Personnel?
-          </h2>
-          <p style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
-            We believe in positive risk-taking to widen the world of those we support.
-            Our holistic philosophy utilizes strengths to develop new skills and meaningful relationships.
-          </p>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span style={{ color: 'var(--accent-color)' }}>✔</span> Specialized Support
-            </li>
-            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span style={{ color: 'var(--accent-color)' }}>✔</span> Nature-focused
-            </li>
-            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span style={{ color: 'var(--accent-color)' }}>✔</span> Community Integration
-            </li>
-          </ul>
-        </div>
-        <div className={styles.aboutImage} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#aaa' }}>
-          Image: Active Support in Nature
-        </div>
-      </section>
+      {/* Partners Section */}
+      <Partners />
+
+      {/* Why Choose Section */}
+      <WhyChooseSection />
 
       {/* Footer */}
       <footer style={{ background: '#023e8a', color: 'white', padding: '4rem 2rem', marginTop: 'auto' }}>

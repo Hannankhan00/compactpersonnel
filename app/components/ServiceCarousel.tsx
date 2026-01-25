@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
 import FadeIn from './FadeIn';
@@ -9,7 +9,6 @@ const services = [
     {
         title: "Residential Care",
         description: "We provide residential care for individuals with Learning Disabilities including autism and associated conditions such as Asperger's Syndrome.",
-        // User will add images later, using a placeholder color for now
         color: "#7e8c8d"
     },
     {
@@ -31,45 +30,53 @@ const services = [
 
 export default function ServiceCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [visibleItems, setVisibleItems] = useState(3);
+    const [isMounted, setIsMounted] = useState(false);
 
-    // We want to show 3 cards at a time on desktop
-    // Max index would be total - 3 
-    // But for better mobile flexibility, we might just slide by item width.
-    // For simplicity and robustness on "View 4th card", let's define the view window.
+    useEffect(() => {
+        setIsMounted(true);
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                setVisibleItems(1);
+            } else {
+                setVisibleItems(3);
+            }
+        };
 
-    const handleNext = () => {
-        if (currentIndex < services.length - 1) { // Allow scrolling until the very last card is fully visible? 
-            // Logic: if we show 3, and have 4. Index 0 shows 1,2,3. Index 1 shows 2,3,4.
-            // So max index is services.length - 3?
-            // Let's rely on a simpler 'one by one' slide or just strict bounds.
-            // Image implies we click to see the "last card".
-            // Let's just increment index. CSS will handle the window.
-            setCurrentIndex((prev) => (prev + 1) % services.length);
-        }
-    };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-    const handlePrev = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
-        }
-    };
-
-    // Specific logic: 
-    // If we want a strict "3 visible" view:
-    // Desktop: max index = 1 (State 0: 1-2-3, State 1: 2-3-4) ? 
-    // Actually, let's keep it simple: Infinite carousel or bounded?
-    // User said "see the last card by clicking the arrow", implying it's hidden initially.
-    // Let's implement bounded for now.
-
-    const maxIndex = services.length - 3; // 1
+    // Ensure we don't calculate maxIndex until we know the visibility, 
+    // OR we default to 3 (Desktop) and accept the jump on mobile hydrate.
+    // The maxIndex is simply:
+    const maxIndex = Math.max(0, services.length - visibleItems);
 
     const nextSlide = () => {
-        setCurrentIndex(prev => Math.min(prev + 1, maxIndex > 0 ? maxIndex : services.length - 1));
+        if (currentIndex < maxIndex) {
+            setCurrentIndex(prev => prev + 1);
+        }
     }
 
     const prevSlide = () => {
-        setCurrentIndex(prev => Math.max(prev - 1, 0));
+        if (currentIndex > 0) {
+            setCurrentIndex(prev => prev - 1);
+        }
     }
+
+    const renderDots = () => (
+        <div className={styles.carouselDots}>
+            {services.map((_, idx) => (
+                <button
+                    key={idx}
+                    className={`${styles.dot} ${idx === currentIndex ? styles.activeDot : ''}`}
+                    onClick={() => setCurrentIndex(Math.min(idx, maxIndex))}
+                    aria-label={`Go to slide ${idx + 1}`}
+                />
+            ))}
+        </div>
+    );
 
     return (
         <section className={styles.carouselSection}>
@@ -89,7 +96,7 @@ export default function ServiceCarousel() {
                         <div className={styles.buttonGlow}></div>
                     </button>
 
-                    <div className={styles.carouselControls}>
+                    <div className={`${styles.carouselControls} ${styles.desktopControls}`}>
                         <button
                             onClick={prevSlide}
                             className={`${styles.arrowButton} ${currentIndex === 0 ? styles.disabled : ''}`}
@@ -100,7 +107,7 @@ export default function ServiceCarousel() {
                         <button
                             onClick={nextSlide}
                             className={`${styles.arrowButton} ${currentIndex >= maxIndex ? styles.disabled : ''}`}
-                            disabled={currentIndex >= maxIndex && maxIndex >= 0}
+                            disabled={currentIndex >= maxIndex}
                         >
                             &rarr;
                         </button>
@@ -116,7 +123,6 @@ export default function ServiceCarousel() {
                 >
                     {services.map((service, index) => (
                         <div key={index} className={styles.serviceCard} style={{ backgroundColor: service.color }}>
-                            {/* Placeholder for background image */}
                             <div className={styles.serviceCardOverlay}>
                                 <h3 className={styles.serviceCardTitle}>{service.title}</h3>
                                 <p className={styles.serviceCardDesc}>{service.description}</p>
@@ -125,6 +131,26 @@ export default function ServiceCarousel() {
                         </div>
                     ))}
                 </motion.div>
+            </div>
+
+            <div className={styles.mobileControlsWrapper}>
+                <button
+                    onClick={prevSlide}
+                    className={`${styles.arrowButton} ${currentIndex === 0 ? styles.disabled : ''}`}
+                    disabled={currentIndex === 0}
+                >
+                    &larr;
+                </button>
+
+                {renderDots()}
+
+                <button
+                    onClick={nextSlide}
+                    className={`${styles.arrowButton} ${currentIndex >= maxIndex ? styles.disabled : ''}`}
+                    disabled={currentIndex >= maxIndex}
+                >
+                    &rarr;
+                </button>
             </div>
         </section>
     );
