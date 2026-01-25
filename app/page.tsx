@@ -15,8 +15,8 @@ export default function Home() {
               <span style={{ color: 'var(--accent-color)' }}>Z</span>
             </div>
             <div className={styles.logoText}>
-              <span className={styles.logoMain}>zeno</span>
-              <span className={styles.logoSub}>LIMITED</span>
+              <span className={styles.logoMain}>Compact</span>
+              <span className={styles.logoSub}>Personnel</span>
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export default function Home() {
       <section className={styles.aboutSection}>
         <div className={styles.aboutContent}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-            Why Choose Zeno Clone?
+            Why Choose Compact Personnel?
           </h2>
           <p style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
             We believe in positive risk-taking to widen the world of those we support.
@@ -157,14 +157,14 @@ export default function Home() {
       <footer style={{ background: '#023e8a', color: 'white', padding: '4rem 2rem', marginTop: 'auto' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
           <div>
-            <h3 style={{ marginBottom: '1rem' }}>ZENO CLONE</h3>
+            <h3 style={{ marginBottom: '1rem' }}>COMPACT PERSONNEL</h3>
             <p style={{ maxWidth: '300px', opacity: 0.8 }}>
               Helping adults with complex needs achieve incredible outcomes.
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <strong>Get in Touch</strong>
-            <span>Email: info@zenoclone.co.uk</span>
+            <span>Email: info@compactpersonnel.co.uk</span>
             <span>Phone: 0123 456 7890</span>
           </div>
         </div>

@@ -9,7 +9,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Zeno Clone",
+  title: "Compact Personnel",
   description: "Helping adults with complex needs achieve incredible outcomes.",
 };
 
