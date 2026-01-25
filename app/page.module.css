@@ -892,8 +892,9 @@
     gap: 0;
     max-width: 1400px;
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 0;
     min-height: 600px;
+    width: 100%;
 }
 
 .whyChooseContent {
@@ -1099,8 +1100,83 @@
     font-weight: 600;
 }
 
+/* Contact Us Button */
+.whatWeDoButtonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.whatWeDoContactBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var(--button-accent);
+    color: var(--text-dark);
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    min-width: 200px;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.whatWeDoContactBtn:hover {
+    transform: translateY(-2px);
+}
+
+.whatWeDoContactBtnText {
+    position: relative;
+    z-index: 2;
+}
+
+.whatWeDoContactBtnArrow {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.whatWeDoContactBtnGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(120px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.5),
+            transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.whatWeDoContactBtn:hover .whatWeDoContactBtnGlow {
+    opacity: 1;
+}
+
 /* What We Do - Responsive */
 @media (max-width: 900px) {
+    .whatWeDoSection {
+        padding: 5rem 1.5rem;
+    }
+
     .whatWeDoContainer {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1108,6 +1184,12 @@
 
     .whatWeDoHeadline {
         font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .whatWeDoHeadline::before {
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .whatWeDoContent {
@@ -1115,6 +1197,17 @@
         padding-left: 0;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         padding-top: 2rem;
+        text-align: center;
+    }
+
+    .whatWeDoButtonWrapper {
+        margin-top: 2rem;
+        padding: 0 1rem;
+    }
+
+    .whatWeDoContactBtn {
+        width: 100%;
+        min-width: unset;
     }
 }
 
@@ -1130,7 +1223,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -1296,6 +1389,174 @@
     }
 }
 
+/* Work With Us Section */
+.workWithUsSection {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    margin: 4rem auto;
+    max-width: 1400px;
+}
+
+.workWithUsBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/work-with-us-bg.jpg');
+    /* User to replace */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/* Fallback background if no image */
+.workWithUsBackground:empty {
+    background: linear-gradient(135deg, #A8C8E6, #D8BFD8);
+}
+
+.workWithUsBlur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+    z-index: 1;
+}
+
+.workWithUsContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin-top: 20%;
+}
+
+.workWithUsTitle {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #E8C1D6;
+    /* Light pink from reference */
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.workWithUsText {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    margin-bottom: 3rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.workWithUsBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    background-color: #FCD570;
+    /* Yellow from reference */
+    color: #1a1a1a;
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    min-width: 180px;
+    position: relative;
+    overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.workWithUsBtnText {
+    position: relative;
+    z-index: 2;
+}
+
+.workWithUsBtnArrow {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    position: relative;
+    z-index: 2;
+}
+
+.workWithUsBtnGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(80px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.6), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.workWithUsBtn:hover .workWithUsBtnGlow {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .workWithUsSection {
+        border-radius: 40px;
+        margin: 2rem 1rem;
+        height: 700px;
+        width: auto;
+    }
+
+    .workWithUsTitle {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .workWithUsText {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        padding: 0 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .workWithUsContent {
+        margin-top: auto;
+        padding-bottom: 4rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .workWithUsBlur {
+        height: 80%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, transparent 100%);
+    }
+}
+
 /* Partners Section */
 .partnersSection {
     padding: 4rem 0 8rem;
@@ -1351,13 +1612,11 @@
     font-size: 1rem;
     color: #666;
     /* grayscale until hover? */
-    filter: grayscale(100%);
-    opacity: 0.7;
     transition: all 0.3s;
 }
 
 .logoPlaceholder:hover {
-    filter: grayscale(0%);
+
     opacity: 1;
     transform: scale(1.05);
 }
@@ -1373,5 +1632,290 @@
     .partnersTrack {
         --partner-slide-pct: 50%;
         /* 2 items */
+    }
+}
+
+/* Trusted Section */
+.trustedSection {
+    padding: 6rem 2rem;
+    background-color: white;
+}
+
+.trustedContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 500px;
+    border-radius: 40px;
+    overflow: hidden;
+    background-color: #f0f7fa;
+    /* Very light blue/gray from reference */
+}
+
+.trustedImageWrapper {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+}
+
+.trustedImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/trusted-team.jpg');
+    /* User to replace */
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+    /* Fallback */
+}
+
+.trustedContent {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trustedTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #0f4c81;
+    /* Blue from reference */
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.trustedText {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.trustedButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    background-color: #FCD570;
+    color: #1a1a1a;
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    min-width: 180px;
+    position: relative;
+    overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.trustedButtonText {
+    position: relative;
+    z-index: 2;
+}
+
+.trustedButtonArrow {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    position: relative;
+    z-index: 2;
+}
+
+.trustedButtonGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(80px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.6), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.trustedButton:hover .trustedButtonGlow {
+    opacity: 1;
+}
+
+@media (max-width: 900px) {
+    .trustedContainer {
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+    }
+
+    .trustedImageWrapper {
+        min-height: 300px;
+        order: 1;
+    }
+
+    .trustedContent {
+        order: 2;
+        padding: 3rem 2rem;
+    }
+
+    .trustedTitle {
+        font-size: 2.5rem;
+    }
+}
+
+/* Referral Section - Based on WorkWithUs style */
+.referralSection {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    margin: 4rem auto;
+    max-width: 1400px;
+}
+
+.referralBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/referral-bg.jpg');
+    /* User to replace */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/* Fallback */
+.referralBackground:empty {
+    background: linear-gradient(135deg, #7CB9A8, #8B9A70);
+}
+
+.referralBlur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+    z-index: 1;
+}
+
+.referralContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 900px;
+    margin-top: 20%;
+}
+
+.referralTitle {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #E8C1D6;
+    /* Light pink */
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+}
+
+.referralText {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    margin-bottom: 3rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .referralSection {
+        border-radius: 40px;
+        margin: 2rem 1rem;
+        height: 700px;
+        width: auto;
+    }
+
+    .referralContent {
+        margin-top: auto;
+        padding-bottom: 4rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .referralTitle {
+        font-size: 2.5rem !important;
+    }
+
+    .referralBlur {
+        height: 80%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, transparent 100%);
+    }
+}
+
+/* Success Stories Section */
+.successMobileCarousel {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .successHeader {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .successTitle {
+        font-size: 2.5rem;
+    }
+
+    .successGrid {
+        display: none;
+    }
+
+    .successMobileCarousel {
+        display: block;
+        overflow: hidden;
+    }
+
+    .successTrack {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .successCardMobile {
+        flex: 0 0 calc(100vw - 4rem);
+        /* Full width with padding */
+        background: white;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .successImageWrapper {
+        height: 250px;
     }
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const approaches = [
     {
@@ -106,7 +107,7 @@ export default function ApproachCarousel() {
                         className={`${styles.approachArrow} ${currentIndex === 0 ? styles.disabled : ''}`}
                         disabled={currentIndex === 0}
                     >
-                        &larr;
+                        <ArrowLeft size={20} />
                     </button>
 
                     <div className={styles.approachDots}>
@@ -125,7 +126,7 @@ export default function ApproachCarousel() {
                         className={`${styles.approachArrow} ${currentIndex >= maxIndex ? styles.disabled : ''}`}
                         disabled={currentIndex >= maxIndex}
                     >
-                        &rarr;
+                        <ArrowRight size={20} />
                     </button>
                 </div>
             </div>

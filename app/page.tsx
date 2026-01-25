@@ -8,6 +8,11 @@ import Partners from './components/Partners';
 import WhyChooseSection from './components/WhyChooseSection';
 import WhatWeDoSection from './components/WhatWeDoSection';
 import ApproachCarousel from './components/ApproachCarousel';
+import TrustedSection from './components/TrustedSection';
+import AchievementsSection from './components/AchievementsSection';
+import SuccessStoriesSection from './components/SuccessStoriesSection';
+import ReferralSection from './components/ReferralSection';
+import WorkWithUsSection from './components/WorkWithUsSection';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -80,6 +85,21 @@ export default function Home() {
 
       {/* Approach Carousel */}
       <ApproachCarousel />
+
+      {/* Work With Us Section */}
+      <WorkWithUsSection />
+
+      {/* Trusted Organisation Section */}
+      <TrustedSection />
+
+      {/* Achievements Section */}
+      <AchievementsSection />
+
+      {/* Referral Section */}
+      <ReferralSection />
+
+      {/* Success Stories Section */}
+      <SuccessStoriesSection />
 
       {/* Footer */}
       <footer style={{ background: '#023e8a', color: 'white', padding: '4rem 2rem', marginTop: 'auto' }}>

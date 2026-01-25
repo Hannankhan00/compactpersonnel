@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
+import { ArrowRight } from 'lucide-react';
 
 export default function WhyChooseSection() {
     return (
@@ -36,7 +37,9 @@ export default function WhyChooseSection() {
                     }}
                 >
                     <span className={styles.whyChooseButtonText}>Learn more</span>
-                    <span className={styles.whyChooseButtonArrow}>&rarr;</span>
+                    <span className={styles.whyChooseButtonArrow}>
+                        <ArrowRight size={18} strokeWidth={2.5} />
+                    </span>
                     <div className={styles.whyChooseButtonGlow}></div>
                 </motion.button>
             </motion.div>

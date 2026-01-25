@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import styles from '../page.module.css';
+import { ArrowRight } from 'lucide-react';
 
 export default function HeroCards() {
     const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -23,7 +24,7 @@ export default function HeroCards() {
                 <div className={styles.glowEffect}></div>
                 <div className={styles.glassCardContent}>
                     <h3 className={styles.glassCardTitle}>
-                        Work With Us <span style={{ marginLeft: '5px' }}>&rarr;</span>
+                        Work With Us <ArrowRight size={18} style={{ marginLeft: '5px' }} />
                     </h3>
                     <p className={styles.glassCardText}>
                         Jump into a dynamic role where you can make a real impact.
@@ -41,7 +42,7 @@ export default function HeroCards() {
                 <div className={styles.glowEffect}></div>
                 <div className={styles.glassCardContent}>
                     <h3 className={styles.glassCardTitle}>
-                        Get In Touch <span style={{ marginLeft: '5px' }}>&rarr;</span>
+                        Get In Touch <ArrowRight size={18} style={{ marginLeft: '5px' }} />
                     </h3>
                     <p className={styles.glassCardText}>
                         We're here to help and assist you with any of our services.
