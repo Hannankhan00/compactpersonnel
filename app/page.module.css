@@ -146,8 +146,10 @@
     position: relative;
     z-index: 10;
     display: flex;
-    gap: 2rem;
-    max-width: 1200px;
+    gap: 1.5rem;
+    /* Slightly reduced gap for more card space */
+    max-width: 96%;
+    /* Use almost full width of the hero container */
     width: 100%;
     padding: 0 1rem;
     justify-content: center;
@@ -155,7 +157,8 @@
 
 .glassCard {
     flex: 1;
-    max-width: 500px;
+    max-width: 800px;
+    /* Increased significantly from 500px */
     /* Glassmorphism Effect */
     background: rgba(255, 255, 255, 0.75);
     /* High opacity white for readability, semi-transparent */
