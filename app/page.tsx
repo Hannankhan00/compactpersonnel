@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HeroCards from './components/HeroCards';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -53,19 +54,25 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
+      {/* Hero Section */}
       <section className={styles.heroSection}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.title}>
-            We help adults with complex needs achieve <span className={styles.titleGradient}>incredible outcomes</span>
-          </h1>
-          <p className={styles.subtitle}>
-            Promoting inclusion, equality, and independence in a safe, therapeutic, and nature-rich environment.
-          </p>
-          <div className={styles.buttonGroup}>
-            <button className={styles.primaryButton}>Our Services</button>
-            <button className={styles.secondaryButton}>Contact Us</button>
-          </div>
+        {/* Video Background Placeholder */}
+        <div className={styles.heroVideoContainer}>
+          <video
+            autoPlay
+            muted
+            loop
+            className={styles.heroVideo}
+            poster="/hero-placeholder.jpg"
+          >
+            {/* User to replace src with actual video */}
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+          <div className={styles.heroOverlay}></div>
         </div>
+
+        {/* Glass Cards Container */}
+        <HeroCards />
       </section>
 
       {/* Services Section */}
