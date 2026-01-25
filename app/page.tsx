@@ -7,6 +7,7 @@ import ServiceCarousel from './components/ServiceCarousel';
 import Partners from './components/Partners';
 import WhyChooseSection from './components/WhyChooseSection';
 import WhatWeDoSection from './components/WhatWeDoSection';
+import ApproachCarousel from './components/ApproachCarousel';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -76,6 +77,9 @@ export default function Home() {
 
       {/* What We Do Section */}
       <WhatWeDoSection />
+
+      {/* Approach Carousel */}
+      <ApproachCarousel />
 
       {/* Footer */}
       <footer style={{ background: '#023e8a', color: 'white', padding: '4rem 2rem', marginTop: 'auto' }}>

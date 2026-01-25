@@ -1,95 +1,34 @@
 'use client';
 
-import { motion, type Easing } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from '../page.module.css';
+import FadeIn from './FadeIn';
 
 export default function WhatWeDoSection() {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as Easing }
-        }
-    };
-
     return (
         <section className={styles.whatWeDoSection}>
-            <motion.div
-                className={styles.whatWeDoContainer}
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-            >
-                {/* Decorative Line */}
-                <motion.div
-                    className={styles.whatWeDoAccent}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "80px" }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                    viewport={{ once: true }}
-                />
-
-                <motion.h2
-                    className={styles.whatWeDoTitle}
-                    variants={itemVariants}
-                >
+            <div className={styles.whatWeDoContainer}>
+                <FadeIn className={styles.whatWeDoHeadline}>
                     What We Do
-                </motion.h2>
-
+                </FadeIn>
                 <div className={styles.whatWeDoContent}>
-                    <motion.p
-                        className={styles.whatWeDoParagraph}
-                        variants={itemVariants}
-                    >
-                        At Compact Personnel, a positive approach to risk is at the heart of everything we do.
-                        In a world where people are often expected to fit into pre-defined boxes, we take a
-                        different approach which focuses on their <strong>strengths</strong> and develops
-                        their <strong>abilities</strong>.
-                    </motion.p>
-
-                    <motion.p
-                        className={styles.whatWeDoParagraph}
-                        variants={itemVariants}
-                    >
-                        Our services are designed around the individual with the person at the centre.
-                        This includes their environment, their team, their model of support, their
-                        therapeutic activities, their relationships and family — creating a
-                        <strong> pathway for growth</strong>.
-                    </motion.p>
-
-                    <motion.p
-                        className={styles.whatWeDoParagraph}
-                        variants={itemVariants}
-                    >
-                        This approach empowers each person to live a meaningful life on their own terms —
-                        building confidence, resilience, and independence. By recognising and nurturing
-                        potential rather than focusing on limitations, we enable individuals to thrive
-                        in their communities and lead fulfilling lives with <strong>purpose and dignity</strong>.
-                    </motion.p>
+                    <FadeIn delay={0.2}>
+                        <p className={styles.whatWeDoText}>
+                            At Compact Personnel, a <strong>positive approach to risk</strong> is at the heart of everything we do. In a world where people are often expected to fit into pre-defined boxes, we take a different approach which focuses on their strengths and develops their abilities.
+                        </p>
+                    </FadeIn>
+                    <FadeIn delay={0.3}>
+                        <p className={styles.whatWeDoText}>
+                            Our services are designed around the individual with the <strong>person at the centre</strong>. This includes their environment, their team, their model of support, their therapeutic activities, their relationships and family — creating a pathway for growth.
+                        </p>
+                    </FadeIn>
+                    <FadeIn delay={0.4}>
+                        <p className={styles.whatWeDoText}>
+                            This approach empowers each person to live a meaningful life on their own terms — building confidence, resilience, and independence. By recognising and nurturing potential rather than focusing on limitations, we enable individuals to thrive in their communities and lead fulfilling lives with <strong>purpose and dignity</strong>.
+                        </p>
+                    </FadeIn>
                 </div>
-
-                {/* Decorative Elements */}
-                <motion.div
-                    className={styles.whatWeDoDecoCircle}
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 0.08 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    viewport={{ once: true }}
-                />
-            </motion.div>
+            </div>
         </section>
     );
 }
