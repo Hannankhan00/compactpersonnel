@@ -9,11 +9,14 @@
 }
 
 .headerContainer {
-    max-width: 1300px;
+    max-width: 95%;
+    /* Wider to push elements to edges */
     margin: 0 auto;
     padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    /* Changed from flex to grid */
+    grid-template-columns: 1fr auto 1fr;
+    /* Logo(Left), Nav(Center), Button(Right) */
     align-items: center;
 }
 
@@ -87,6 +90,8 @@
     font-size: 0.95rem;
     transition: all 0.2s ease;
     white-space: nowrap;
+    justify-self: end;
+    /* Aligns button to the right in the grid */
 }
 
 .contactButton:hover {
