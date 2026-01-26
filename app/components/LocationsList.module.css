@@ -1,0 +1,144 @@
+.locationsSection {
+    padding: 6rem 0;
+    margin: 0 auto;
+    max-width: 1400px;
+    background: #ffffff;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.sectionTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #023e8a;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.introText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #475569;
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.introText:last-of-type {
+    margin-bottom: 4rem;
+}
+
+.locationsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.locationCard {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 40px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 180px;
+}
+
+.locationCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    border-color: #0077b6;
+}
+
+.infoSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.year {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #023e8a;
+    /* Blue from image */
+    margin-bottom: 0.5rem;
+}
+
+.locationName {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+.imageSide {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-left: 1.5rem;
+    background: #f1f5f9;
+}
+
+.locationImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e0f2fe 0%, #cbd5e1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Modal for Location Details (optional, keeping structure similar to team) */
+/* Can be added later if "click" action is needed */
+
+@media (max-width: 900px) {
+    .locationsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionTitle {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .locationCard {
+        padding: 1.5rem;
+        border-radius: 30px;
+    }
+
+    .year {
+        font-size: 1.6rem;
+    }
+
+    .locationName {
+        font-size: 1.2rem;
+    }
+
+    .imageSide {
+        width: 100px;
+        height: 100px;
+    }
+}

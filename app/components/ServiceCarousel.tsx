@@ -114,7 +114,6 @@ export default function ServiceCarousel() {
                             <div className={styles.serviceCardOverlay}>
                                 <h3 className={styles.serviceCardTitle}>{service.title}</h3>
                                 <p className={styles.serviceCardDesc}>{service.description}</p>
-                                <button className={styles.serviceCardBtn}>Learn more</button>
                             </div>
                         </div>
                     ))}
