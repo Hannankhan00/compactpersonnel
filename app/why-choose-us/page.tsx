@@ -12,7 +12,7 @@ import SuccessStoriesSection from '../components/SuccessStoriesSection';
 
 export default function WhyChooseUsPage() {
     return (
-        <main style={{ backgroundColor: '#fcfcfc', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <main style={{ backgroundColor: '#ffffffff', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <Header />
             <WhyChooseHero />
             <PhilosophySection />

@@ -1,7 +1,8 @@
 .philosophySection {
-    padding: 6rem 2rem;
-    margin: 0 2rem;
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    padding: 6rem 0;
+    margin: 0 auto;
+    max-width: 1400px;
+    background: #ffffff;
     position: relative;
     overflow: hidden;
 }
@@ -17,7 +18,7 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -160,7 +161,6 @@
     margin-bottom: 1rem;
     color: transparent;
     -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
-    text-stroke: 2px rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 900px) {

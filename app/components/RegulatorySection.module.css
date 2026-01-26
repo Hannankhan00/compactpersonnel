@@ -1,12 +1,12 @@
 .regulatorySection {
-    padding: 4rem 2rem;
-    margin: 0 2rem;
+    padding: 4rem 0;
+    margin: 0 auto;
+    max-width: 1400px;
     background-color: transparent;
 }
 
 .regulatoryContainer {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
@@ -24,15 +24,14 @@
 }
 
 .title {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     font-weight: 800;
-    color: #0077b6;
+    color: #023e8a;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
+    line-height: 1.15;
     position: relative;
 }
 
-/* Decorative accent for the headline */
 .title::before {
     content: '';
     position: absolute;
@@ -45,10 +44,9 @@
 }
 
 .description {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.8;
     color: #1e293b;
-    max-width: 480px;
 }
 
 .highlight {
@@ -100,11 +98,11 @@
     }
 
     .contentSide {
-        padding: 2.5rem 2rem;
+        padding: 2rem 1.5rem;
     }
 
     .title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .title::before {
@@ -114,7 +112,7 @@
     }
 
     .description {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -125,11 +123,11 @@
     }
 
     .contentSide {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem;
     }
 
     .title {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .imageSide {

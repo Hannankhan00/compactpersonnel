@@ -388,9 +388,6 @@
     margin-top: 2rem;
 }
 
-.missionButtonWrapper {
-    /* Optional additional styling if needed */
-}
 
 @media (max-width: 900px) {
     .missionContainer {
