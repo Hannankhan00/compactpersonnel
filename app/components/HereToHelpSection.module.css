@@ -1,0 +1,108 @@
+.hereToHelpSection {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    margin: 4rem auto;
+    max-width: 1400px;
+}
+
+.hereToHelpBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/here-to-help-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/* Fallback/placeholder background if no image */
+.hereToHelpBackground:empty {
+    background: linear-gradient(135deg, #5a8f3e, #7ab55c);
+}
+
+.hereToHelpBlur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+    z-index: 1;
+}
+
+.hereToHelpContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin-top: 20%;
+}
+
+.hereToHelpTitle {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #E8C1D6;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hereToHelpText {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    margin-bottom: 3rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hereToHelpSection {
+        border-radius: 40px;
+        margin: 2rem 1rem;
+        height: 700px;
+        width: auto;
+    }
+
+    .hereToHelpTitle {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .hereToHelpText {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        padding: 0 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .hereToHelpContent {
+        margin-top: auto;
+        padding-bottom: 4rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .hereToHelpBlur {
+        height: 80%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, transparent 100%);
+    }
+}

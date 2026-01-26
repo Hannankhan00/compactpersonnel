@@ -16,8 +16,8 @@ export default function Header() {
             label: "About Us",
             dropdown: [
                 { label: "Why Choose Us", href: "/why-choose-us" },
-                { label: "Our Service Model", href: "#" },
-                { label: "Meet The Team", href: "#" },
+                { label: "Our Service Model", href: "/our-service-model" },
+                { label: "Meet The Team", href: "/meet-the-team" },
                 { label: "Our Locations", href: "#" }
             ]
         },
