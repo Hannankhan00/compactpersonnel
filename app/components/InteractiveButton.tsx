@@ -12,10 +12,12 @@ interface InteractiveButtonProps {
     className?: string; // Additional classes for positioning
     type?: "button" | "submit" | "reset";
     href?: string;
+    target?: string;
+    rel?: string;
     variant?: 'default' | 'header';
 }
 
-export default function InteractiveButton({ text, onClick, className, type = "button", href, variant = 'default' }: InteractiveButtonProps) {
+export default function InteractiveButton({ text, onClick, className, type = "button", href, variant = 'default', target, rel }: InteractiveButtonProps) {
     const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -41,7 +43,14 @@ export default function InteractiveButton({ text, onClick, className, type = "bu
 
     if (href) {
         return (
-            <Link href={href} className={buttonClasses} style={{ textDecoration: 'none', display: 'inline-flex' }} onMouseMove={handleMouseMove}>
+            <Link
+                href={href}
+                className={buttonClasses}
+                style={{ textDecoration: 'none', display: 'inline-flex' }}
+                onMouseMove={handleMouseMove}
+                target={target}
+                rel={rel}
+            >
                 <motion.span
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
