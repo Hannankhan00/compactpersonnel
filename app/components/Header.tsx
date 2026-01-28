@@ -36,8 +36,8 @@ export default function Header() {
         },
         { label: "Complex Care", href: "#" },
         { label: "Mental Health Support", href: "#" },
-        { label: "Resources", href: "#" },
-        { label: "Start a Referral", href: "#" }
+        { label: "Careers", href: "/careers" },
+        { label: "Start a Referral", href: "/start-referral" }
     ];
 
     const toggleExpanded = (index: number) => {

@@ -43,18 +43,20 @@ export default function Footer() {
                 <div className={styles.linksContainer}>
                     <div className={styles.linkColumn}>
                         <h4 className={styles.columnTitle}>Links</h4>
-                        <Link href="#" className={styles.link}>Why Choose Compact</Link>
-                        <Link href="#" className={styles.link}>Our Locations</Link>
-                        <Link href="#" className={styles.link}>Work With Us</Link>
-                        <Link href="#" className={styles.link}>Resources</Link>
+                        <Link href="/why-choose-us" className={styles.link}>Why Choose Compact</Link>
+                        <Link href="/our-locations" className={styles.link}>Our Locations</Link>
+                        <Link href="/our-service-model" className={styles.link}>Our Service Model</Link>
+                        <Link href="/meet-the-team" className={styles.link}>Meet The Team</Link>
+                        <Link href="/careers" className={styles.link}>Careers</Link>
                     </div>
 
                     <div className={styles.linkColumn}>
-                        <h4 className={styles.columnTitle}>Our Locations</h4>
-                        <Link href="#" className={styles.link}>Residential Care</Link>
-                        <Link href="#" className={styles.link}>Supported Living</Link>
-                        <Link href="#" className={styles.link}>Therapeutic Activities</Link>
-                        <Link href="#" className={styles.link}>Rapid Review & Resettlement</Link>
+                        <h4 className={styles.columnTitle}>Our Services</h4>
+                        <Link href="/services/supported-living" className={styles.link}>Supported Living</Link>
+                        <Link href="/services/domiciliary-care" className={styles.link}>Domiciliary Care</Link>
+                        <Link href="/services/complex-care" className={styles.link}>Complex Care</Link>
+                        <Link href="/services/mental-health-support" className={styles.link}>Mental Health Support</Link>
+                        <Link href="/services/live-in-care" className={styles.link}>Live in Care</Link>
                     </div>
 
                     <div className={styles.linkColumn}>
