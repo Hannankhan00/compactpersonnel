@@ -1,0 +1,170 @@
+.section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+}
+
+/* Left Column: Contact Info */
+.infoColumn {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ensure full height in grid */
+}
+
+.infoCard {
+    background: #f8fafc;
+    padding: 3rem;
+    /* Matched to form padding */
+    border-radius: 30px;
+    border: 1px solid #e1e7ec;
+    height: 100%;
+    /* Stretch to fill column */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Distribute items to fill space */
+}
+
+.infoTitle {
+    color: #0f4c81;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    /* Let flex gap/justify handle spacing */
+}
+
+.infoItem {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 0;
+    /* Remove fixed margin for flex distribution */
+}
+
+.iconWrapper {
+    width: 50px;
+    height: 50px;
+    background: #e6f0f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f4c81;
+    flex-shrink: 0;
+}
+
+.itemContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.itemLabel {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.itemValue {
+    font-size: 1.1rem;
+    color: #334155;
+    font-weight: 500;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.itemValue:hover {
+    color: #0f4c81;
+}
+
+/* Right Column: Form */
+.formColumn {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.formTitle {
+    font-size: 2rem;
+    color: #0f4c81;
+    margin-bottom: 1rem;
+}
+
+.formSubtitle {
+    color: #666;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.inputGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #475569;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    outline: none;
+    background: #f8fafc;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: #0f4c81;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(15, 76, 129, 0.05);
+}
+
+.textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+@media (max-width: 900px) {
+    .section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+        /* Reduced padding on mobile */
+    }
+
+    .infoColumn {
+        height: auto;
+        /* Reset height for mobile stack */
+    }
+
+    .infoCard {
+        height: auto;
+        /* Reset height for mobile */
+        gap: 2rem;
+        /* Restore gap for mobile stack */
+        padding: 2rem;
+        /* Reduced padding for mobile */
+    }
+
+    .formColumn {
+        padding: 1.5rem;
+        /* Reduced padding for mobile */
+    }
+}

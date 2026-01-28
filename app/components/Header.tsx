@@ -105,7 +105,7 @@ export default function Header() {
                     <div className={styles.headerActions}>
                         <InteractiveButton
                             text="Contact Us"
-                            href="#"
+                            href="/contact"
                             className={styles.contactButton}
                             variant="header"
                         />
@@ -183,7 +183,7 @@ export default function Header() {
                             <div className={styles.mobileMenuFooter}>
                                 <InteractiveButton
                                     text="Contact Us"
-                                    href="#"
+                                    href="/contact"
                                     className={styles.mobileContactBtn}
                                 />
                             </div>
