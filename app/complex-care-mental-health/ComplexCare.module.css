@@ -149,10 +149,29 @@
 }
 
 @media (max-width: 900px) {
+    .section {
+        padding: 0 1rem;
+        /* Reduce side padding on mobile */
+        margin: 3rem auto;
+    }
 
     .gridThree,
     .gridTwo,
     .storiesGrid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        /* Reduce gap on mobile */
+    }
+
+    .card,
+    .highlightBox,
+    .storyContent {
+        padding: 1.5rem;
+        /* Reduce internal padding on mobile */
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+        /* Smaller title on mobile */
     }
 }

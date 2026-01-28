@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
+import mobileStyles from './SuccessStoriesMobilev2.module.css';
 import { ArrowRight } from 'lucide-react';
 import InteractiveButton from './InteractiveButton';
 
@@ -72,42 +73,43 @@ export default function SuccessStoriesSection() {
                 ))}
             </div>
 
-            {/* Mobile Carousel */}
-            <div className={styles.successMobileCarousel}>
+            {/* Mobile Carousel (Rebuilt) */}
+            <div className={mobileStyles.mobileContainer}>
                 <motion.div
-                    className={styles.successTrack}
-                    animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex * 16}px)` }}
+                    className={mobileStyles.carouselTrack}
+                    animate={{ x: `-${currentIndex * 100}%` }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                     {stories.map((story, index) => (
-                        <div key={index} className={styles.successCardMobile}>
-                            <div className={styles.successImageWrapper}>
-                                <div className={styles.successImagePlaceholder} style={{ backgroundImage: `url(${story.image})` }}></div>
-                            </div>
-                            <div className={styles.successCardContent}>
-                                <h3 className={styles.successCardTitle}>{story.name}</h3>
-                                <p className={styles.successCardText}>{story.description}</p>
-                                <button className={styles.successReadMoreBtn}>Read More</button>
+                        <div key={index} className={mobileStyles.cardWrapper}>
+                            <div className={mobileStyles.card}>
+                                <div className={mobileStyles.imageContainer}>
+                                    <img src={story.image} alt={story.name} className={mobileStyles.image} />
+                                </div>
+                                <div className={mobileStyles.content}>
+                                    <h3 className={mobileStyles.name}>{story.name}</h3>
+                                    <p className={mobileStyles.description}>{story.description}</p>
+                                    <button className={mobileStyles.readMoreBtn}>Read More</button>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </motion.div>
 
-                {/* Mobile Controls */}
-                <div className={styles.approachMobileControls} style={{ marginTop: '1rem', padding: 0 }}>
+                <div className={mobileStyles.controls}>
                     <button
                         onClick={prevSlide}
-                        className={`${styles.approachArrow} ${currentIndex === 0 ? styles.disabled : ''}`}
+                        className={mobileStyles.arrowBtn}
                         disabled={currentIndex === 0}
                     >
                         <ArrowRight size={20} style={{ transform: 'rotate(180deg)' }} />
                     </button>
 
-                    <div className={styles.approachDots}>
+                    <div className={mobileStyles.dots}>
                         {stories.map((_, idx) => (
                             <button
                                 key={idx}
-                                className={`${styles.approachDot} ${idx === currentIndex ? styles.approachDotActive : ''}`}
+                                className={`${mobileStyles.dot} ${idx === currentIndex ? mobileStyles.activeDot : ''}`}
                                 onClick={() => setCurrentIndex(idx)}
                             />
                         ))}
@@ -115,7 +117,7 @@ export default function SuccessStoriesSection() {
 
                     <button
                         onClick={nextSlide}
-                        className={`${styles.approachArrow} ${currentIndex >= maxIndex ? styles.disabled : ''}`}
+                        className={mobileStyles.arrowBtn}
                         disabled={currentIndex >= maxIndex}
                     >
                         <ArrowRight size={20} />

@@ -1517,8 +1517,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    max-width: 400px;
+    padding: 1rem 0;
+    /* Remove horizontal padding, keep vertical */
+    width: 100%;
+    max-width: 300px;
+    /* constraining width to keep arrows closer */
     margin: 0 auto;
 }
 
@@ -2182,6 +2185,11 @@
 }
 
 @media (max-width: 900px) {
+    .successSection {
+        padding: 4rem 1rem;
+        /* Reduced padding for mobile */
+    }
+
     .successHeader {
         flex-direction: column;
         gap: 1.5rem;
@@ -2200,26 +2208,65 @@
     .successMobileCarousel {
         display: block;
         overflow: hidden;
+        width: 100%;
+        /* Ensure full width of container */
+        padding-bottom: 2rem;
+        /* Space for shadow */
+    }
+
+    .successButtonWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .approachMobileControls {
+        width: 100%;
+        max-width: 100%;
+        /* Remove constraint */
+        padding: 0 1rem;
+        margin: 1.5rem 0 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        /* Center everything */
+        gap: 1.5rem;
     }
 
     .successTrack {
         display: flex;
-        gap: 1rem;
+        /* Width is handled inline by React to be N * 100% */
+        touch-action: pan-y;
+        /* Allow vertical scroll but capture horizontal */
+        padding: 0 0.5rem;
+        /* prevent content touching edge immediately */
     }
 
     .successCardMobile {
-        flex: 0 0 calc(100vw - 4rem);
-        /* Full width with padding */
+        flex-shrink: 0;
+        /* Width handled by inline style: 100/N % */
+        padding: 0 0.5rem;
+        /* Small gap between cards */
+        box-sizing: border-box;
+    }
+
+    .successCardInner {
         background: white;
         border-radius: 24px;
         border: 1px solid #e0e0e0;
         display: flex;
         flex-direction: column;
         padding: 1.5rem;
+        height: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .successImageWrapper {
         height: 250px;
+        border-radius: 16px;
+        /* Slightly smaller radius for inner */
+        margin-bottom: 1rem;
     }
 }
 
