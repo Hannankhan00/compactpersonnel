@@ -3,30 +3,18 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
+import Link from 'next/link';
 import FadeIn from './FadeIn';
 
-const services = [
-    {
-        title: "Residential Care",
-        description: "We provide residential care for individuals with Learning Disabilities including autism and associated conditions such as Asperger's Syndrome.",
-        color: "#7e8c8d"
-    },
-    {
-        title: "Supported Living",
-        description: "We support people with complex needs to live independently in their own homes.",
-        color: "#5b6d6f"
-    },
-    {
-        title: "Therapeutic Activities",
-        description: "We create bespoke weekly programmes for each supported person, guided by our holistic philosophy.",
-        color: "#4a5a5c"
-    },
-    {
-        title: "Rapid Review & Settlement",
-        description: "Supporting individuals at risk of placement breakdown, helping to avoid sectioning or hospital admission.",
-        color: "#394849"
-    }
-];
+import { servicesData } from '../lib/servicesData';
+
+// Convert servicesData object to array for the carousel
+const services = Object.entries(servicesData).map(([slug, data]) => ({
+    title: data.title,
+    description: data.description,
+    color: "#0f4c81", // Uniform brand color or rotate colors if preferred
+    slug: slug
+}));
 
 export default function ServiceCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -110,12 +98,23 @@ export default function ServiceCarousel() {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                     {services.map((service, index) => (
-                        <div key={index} className={styles.serviceCard} style={{ backgroundColor: service.color }}>
-                            <div className={styles.serviceCardOverlay}>
-                                <h3 className={styles.serviceCardTitle}>{service.title}</h3>
-                                <p className={styles.serviceCardDesc}>{service.description}</p>
+                        <Link
+                            href={`/services/${service.slug}`}
+                            key={index}
+                            className={styles.serviceCardLink}
+                            style={{
+                                textDecoration: 'none',
+                                display: 'block',
+                                flex: '0 0 var(--slide-width)' // Preserve sizing wrapper logic if needed
+                            }}
+                        >
+                            <div className={styles.serviceCard} style={{ backgroundColor: service.color }}>
+                                <div className={styles.serviceCardOverlay}>
+                                    <h3 className={styles.serviceCardTitle}>{service.title}</h3>
+                                    <p className={styles.serviceCardDesc}>{service.description}</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </motion.div>
             </div>
