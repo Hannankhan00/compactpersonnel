@@ -1,0 +1,158 @@
+.section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    color: #0f4c81;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* Section 1: Grid Layout */
+.gridThree {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.cardTitle {
+    color: #0f4c81;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.cardTitle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: #FFD700;
+    /* Subtle accent color */
+    border-radius: 2px;
+}
+
+.cardText {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listItem {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.listItem::before {
+    content: "•";
+    color: #0f4c81;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Section 2: Split Layout + Highlight */
+.gridTwo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.highlightBox {
+    background: #f8fafc;
+    border-left: 5px solid #0f4c81;
+    padding: 2rem;
+    border-radius: 0 20px 20px 0;
+}
+
+/* Section 3: Success Stories */
+.storiesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for wider cards */
+    gap: 2rem;
+}
+
+.storyCard {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.storyHeader {
+    background: #0f4c81;
+    color: white;
+    padding: 1.5rem;
+}
+
+.storyTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.storyContent {
+    padding: 2rem;
+}
+
+.subHeader {
+    color: #333;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.subHeader:first-child {
+    margin-top: 0;
+}
+
+@media (max-width: 900px) {
+
+    .gridThree,
+    .gridTwo,
+    .storiesGrid {
+        grid-template-columns: 1fr;
+    }
+}

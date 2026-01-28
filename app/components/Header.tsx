@@ -34,9 +34,15 @@ export default function Header() {
                 { label: "Hospital to Home", href: "/services/hospital-to-home" }
             ]
         },
-        { label: "Complex Care", href: "#" },
-        { label: "Mental Health Support", href: "#" },
-        { label: "Careers", href: "/careers" },
+        { label: "Complex Care & Mental Health", href: "/complex-care-mental-health" },
+        {
+            label: "Work With Us",
+            dropdown: [
+                { label: "Our Vacancies", href: "/careers" },
+                { label: "Employee Benefits", href: "/careers" },
+                { label: "Training With Us", href: "/careers" }
+            ]
+        },
         { label: "Start a Referral", href: "/start-referral" }
     ];
 

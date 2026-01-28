@@ -107,7 +107,8 @@
 @media (max-width: 768px) {
     .formContainer {
         padding: 1.5rem;
-        margin: -2rem 1rem 2rem;
+        margin: 2rem 1rem 2rem;
+        /* Fixed overlap for mobile too */
     }
 
     .row {
