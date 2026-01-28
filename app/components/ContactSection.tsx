@@ -81,12 +81,12 @@ export default function ContactSection() {
                         <input type="text" className={styles.input} required placeholder="Your Name" />
                     </div>
 
-                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                        <div className={styles.inputGroup} style={{ flex: 1, minWidth: '250px' }}>
+                    <div className={styles.formRow}>
+                        <div className={`${styles.inputGroup} ${styles.halfInput}`}>
                             <label className={styles.label}>Email Address</label>
                             <input type="email" className={styles.input} required placeholder="email@example.com" />
                         </div>
-                        <div className={styles.inputGroup} style={{ flex: 1, minWidth: '250px' }}>
+                        <div className={`${styles.inputGroup} ${styles.halfInput}`}>
                             <label className={styles.label}>Phone Number</label>
                             <input type="tel" className={styles.input} placeholder="07123 456789" />
                         </div>

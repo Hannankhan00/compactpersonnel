@@ -49,12 +49,15 @@
 
 @media (max-width: 768px) {
     .heroSection {
-        margin: 1rem;
+        margin: 1rem 1rem 0;
+        /* Consistent margin */
         height: 350px;
         border-radius: 20px;
     }
 
+    /* Ensure content inside doesn't overflow if title is huge */
     .title {
         font-size: 2.5rem;
+        word-wrap: break-word;
     }
 }

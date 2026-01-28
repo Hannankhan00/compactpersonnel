@@ -39,6 +39,7 @@
   padding: 0;
 }
 
+html,
 body {
   --font-sans: var(--font-outfit), system-ui, sans-serif;
 
@@ -48,8 +49,10 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  /* Prevent horizontal scroll */
+  /* Prevent horizontal scroll globally */
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 a {

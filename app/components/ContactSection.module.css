@@ -13,6 +13,8 @@
     flex-direction: column;
     height: 100%;
     /* Ensure full height in grid */
+    min-width: 0;
+    /* CSS Grid overflow fix */
 }
 
 .infoCard {
@@ -27,6 +29,8 @@
     flex-direction: column;
     justify-content: space-between;
     /* Distribute items to fill space */
+    width: 100%;
+    /* Ensure strictly contained */
 }
 
 .infoTitle {
@@ -61,6 +65,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    flex: 1;
+    /* Allow text to take remaining space */
+    min-width: 0;
+    /* Text overflow fix */
 }
 
 .itemLabel {
@@ -78,6 +86,8 @@
     line-height: 1.5;
     text-decoration: none;
     transition: color 0.2s;
+    word-break: break-word;
+    /* Prevent long email/address form breaking layout */
 }
 
 .itemValue:hover {
@@ -91,6 +101,10 @@
     border-radius: 30px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
     border: 1px solid #eee;
+    min-width: 0;
+    /* CSS Grid overflow fix */
+    width: 100%;
+    /* Ensure strictly contained */
 }
 
 .formTitle {
@@ -107,6 +121,32 @@
 
 .inputGroup {
     margin-bottom: 1.5rem;
+}
+
+.formRow {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    /* Replaces padding/margin of individual group for the row */
+}
+
+.halfInput {
+    flex: 1;
+    min-width: 250px;
+}
+
+.formRow .inputGroup {
+    margin-bottom: 0;
+    /* Let row handle spacing */
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .halfInput {
+        min-width: 100%;
+        /* Force stack on small mobile */
+    }
 }
 
 .label {
@@ -127,6 +167,8 @@
     transition: all 0.2s;
     outline: none;
     background: #f8fafc;
+    max-width: 100%;
+    /* Prevent input overflow */
 }
 
 .input:focus,
@@ -139,6 +181,7 @@
 .textarea {
     min-height: 150px;
     resize: vertical;
+    max-width: 100%;
 }
 
 @media (max-width: 900px) {
