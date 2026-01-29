@@ -15,7 +15,9 @@
 }
 
 .cardWrapper {
-    min-width: 100%;
+    flex: 0 0 100%;
+    /* Explicitly take 100% of parent width, don't shrink */
+    max-width: 100%;
     padding: 0 0.5rem;
     display: flex;
     justify-content: center;

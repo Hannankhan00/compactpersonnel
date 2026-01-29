@@ -12,7 +12,7 @@ import TrustedSection from './components/TrustedSection';
 import AchievementsSection from './components/AchievementsSection';
 import SuccessStoriesSection from './components/SuccessStoriesSection';
 import TestimonialsSection from './components/TestimonialsSection';
-import ContactSection from './components/ContactSection';
+
 import ReferralSection from './components/ReferralSection';
 import WorkWithUsSection from './components/WorkWithUsSection';
 import Footer from './components/Footer';
@@ -115,8 +115,7 @@ export default function Home() {
       {/* Testimonials Section */}
       <TestimonialsSection />
 
-      {/* Contact Section */}
-      <ContactSection />
+
 
       {/* Footer */}
       <Footer />

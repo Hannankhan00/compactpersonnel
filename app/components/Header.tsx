@@ -38,9 +38,9 @@ export default function Header() {
         {
             label: "Work With Us",
             dropdown: [
-                { label: "Our Vacancies", href: "/careers" },
-                { label: "Employee Benefits", href: "/careers" },
-                { label: "Training With Us", href: "/careers" }
+                { label: "Our Vacancies", href: "/work-with-us/vacancies" },
+                { label: "Employee Benefits", href: "/work-with-us/benefits" },
+                { label: "Training With Us", href: "/work-with-us/training" }
             ]
         },
         { label: "Start a Referral", href: "/start-referral" }
