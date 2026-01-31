@@ -6,16 +6,19 @@ import styles from './ReferralHero.module.css';
 export default function ReferralHero() {
     return (
         <section className={styles.heroSection}>
-            {/* Background Gradient */}
-            <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                background: 'linear-gradient(135deg, #0f4c81 0%, #1e1e1e 100%)',
-                zIndex: 1
-            }} />
+            {/* Zooming Background Image */}
+            <motion.div
+                className={styles.heroImageContainer}
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.1 }}
+                transition={{ duration: 7, ease: "easeInOut" }}
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1920&h=1080&fit=crop"
+                    alt="Start a Referral"
+                    className={styles.heroImage}
+                />
+            </motion.div>
 
             <div className={styles.overlay}></div>
 

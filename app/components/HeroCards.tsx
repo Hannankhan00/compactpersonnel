@@ -17,7 +17,7 @@ export default function HeroCards() {
         <div className={styles.heroCardsContainer}>
             {/* Card 1: Work With Us */}
             <Link
-                href="#"
+                href="/careers"
                 className={`${styles.glassCard} ${styles.interactiveCard}`}
                 onMouseMove={handleMouseMove}
             >
@@ -30,12 +30,18 @@ export default function HeroCards() {
                         Jump into a dynamic role where you can make a real impact.
                     </p>
                 </div>
-                <div className={styles.glassCardImage}></div>
+                <div className={styles.glassCardImage}>
+                    <img
+                        src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=160&h=160&fit=crop&crop=faces"
+                        alt="Team collaboration"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                    />
+                </div>
             </Link>
 
             {/* Card 2: Get In Touch */}
             <Link
-                href="#"
+                href="/contact"
                 className={`${styles.glassCard} ${styles.interactiveCard}`}
                 onMouseMove={handleMouseMove}
             >
@@ -48,7 +54,13 @@ export default function HeroCards() {
                         We're here to help and assist you with any of our services.
                     </p>
                 </div>
-                <div className={styles.glassCardImage}></div>
+                <div className={styles.glassCardImage}>
+                    <img
+                        src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=160&h=160&fit=crop"
+                        alt="Contact us"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                    />
+                </div>
             </Link>
         </div>
     );

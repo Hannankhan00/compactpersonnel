@@ -6,14 +6,16 @@ import styles from './ContactHero.module.css';
 export default function ContactHero() {
     return (
         <section className={styles.heroSection}>
-            {/* Background Gradient */}
+            {/* Background Image */}
             <div style={{
                 position: 'absolute',
                 top: 0,
                 left: 0,
                 width: '100%',
                 height: '100%',
-                background: 'linear-gradient(135deg, #2c3e50 0%, #000000 100%)', // Sleek dark aesthetic
+                backgroundImage: 'url(https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=1600&h=800&fit=crop)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 zIndex: 1
             }} />
 

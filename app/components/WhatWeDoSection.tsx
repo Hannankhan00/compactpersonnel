@@ -36,6 +36,7 @@ export default function WhatWeDoSection() {
                     <InteractiveButton
                         text="Contact us"
                         className={styles.whatWeDoContactBtn}
+                        href="/contact"
                     />
                 </div>
             </FadeIn>

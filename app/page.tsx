@@ -30,17 +30,17 @@ export default function Home() {
       {/* Hero Section */}
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        {/* Video Background Placeholder */}
+        {/* Hero Background Image */}
         <div className={styles.heroVideoContainer}>
           <video
             autoPlay
-            muted
             loop
+            muted
+            playsInline
             className={styles.heroVideo}
-            poster="/hero-placeholder.jpg"
           >
-            {/* User to replace src with actual video */}
-            <source src="/hero-video.mp4" type="video/mp4" />
+            <source src="/assets/hero-vid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
           <div className={styles.heroOverlay}></div>
         </div>
@@ -76,7 +76,7 @@ export default function Home() {
 
           <FadeIn delay={0.5} className={styles.missionButtonContainer}>
             <div className={styles.missionButtonWrapper}>
-              <InteractiveButton text="Get in touch" />
+              <InteractiveButton text="Get in touch" href="/contact" />
             </div>
           </FadeIn>
         </div>

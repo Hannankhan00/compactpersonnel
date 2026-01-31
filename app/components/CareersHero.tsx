@@ -6,7 +6,7 @@ import styles from './CareersHero.module.css';
 interface CareersHeroProps {
     title?: string;
     subtitle?: string;
-    backgroundImageUrl?: string; // Optional custom background
+    backgroundImageUrl?: string;
 }
 
 export default function CareersHero({
@@ -14,32 +14,23 @@ export default function CareersHero({
     subtitle = "Build a rewarding career with Compact Personnel",
     backgroundImageUrl
 }: CareersHeroProps) {
+    const imageUrl = backgroundImageUrl || 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=1080&fit=crop';
+
     return (
         <section className={styles.heroSection}>
-            {/* Background Image or Gradient */}
-            {backgroundImageUrl ? (
-                <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    backgroundImage: `url(${backgroundImageUrl})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    zIndex: 1
-                }} />
-            ) : (
-                <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    background: 'linear-gradient(135deg, #1cb5e0 0%, #000851 100%)',
-                    zIndex: 1
-                }} />
-            )}
+            {/* Zooming Background Image */}
+            <motion.div
+                className={styles.heroImageContainer}
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.1 }}
+                transition={{ duration: 7, ease: "easeInOut" }}
+            >
+                <img
+                    src={imageUrl}
+                    alt="Work With Us"
+                    className={styles.heroImage}
+                />
+            </motion.div>
 
             <div className={styles.overlay}></div>
 

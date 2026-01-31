@@ -30,7 +30,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             {/* Hero Section */}
             <section className={styles.hero}>
                 <div className={styles.heroContent}>
-                    {/* Placeholder Background (could be dynamic) */}
+                    {/* Background Gradient */}
                     <div style={{
                         position: 'absolute',
                         top: 0,

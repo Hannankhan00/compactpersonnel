@@ -11,17 +11,17 @@ const stories = [
     {
         name: "Sharon",
         description: "Sharon presents as a happy, contented, friendly, co-operative, sociable, helpful and able woman. She displays intelligence in certain areas of her daily life skills, has a good sense of self-awareness and has developed positive relationships with those around her.",
-        image: "/assets/sharon.jpg"
+        image: "/assets/sharon.png"
     },
     {
         name: "Cam",
         description: "Cam is a friendly and well-humoured young man. He is non-verbal, incontinent and reliant on others for his daily needs. He manages to communicate his own way by leading his support team to what it is that he wants and pointing.",
-        image: "/assets/cam.jpg"
+        image: "/assets/cam.png"
     },
     {
         name: "Imran",
         description: "This supported person has Obsessive Compulsive Disorder, Autism, AKT-3, and a moderate-severe learning disability. Despite these challenges, Imran continues to make incredible progress with our specialized support plan.",
-        image: "/assets/imran.jpg"
+        image: "/assets/imran.png"
     }
 ];
 
@@ -46,7 +46,7 @@ export default function SuccessStoriesSection() {
             <div className={styles.successHeader}>
                 <h2 className={styles.successTitle}>Our Success Stories</h2>
                 <div className={styles.successHeaderButton}>
-                    <InteractiveButton text="See all articles" />
+                    <InteractiveButton text="See all articles" href="/why-choose-us" />
                 </div>
             </div>
 
@@ -126,7 +126,7 @@ export default function SuccessStoriesSection() {
             </div>
 
             <div className={styles.successButtonWrapper}>
-                <InteractiveButton text="See all articles" />
+                <InteractiveButton text="See all articles" href="/why-choose-us" />
             </div>
         </section>
     );

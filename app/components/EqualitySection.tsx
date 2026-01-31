@@ -16,17 +16,12 @@ export default function EqualitySection() {
             >
                 {/* Image Side */}
                 <div className={styles.imageSide}>
-                    {/* Replace this placeholder with actual image later */}
-                    <div className={styles.imagePlaceholder}>
-                        Image placeholder<br />Add your image here
-                    </div>
-                    {/* Uncomment and use this when you have the image:
-                    <img 
-                        src="/assets/equality-image.jpg" 
-                        alt="Team collaboration" 
+                    <img
+                        src="/assets/equality-diversity.png"
+                        alt="Diverse team collaborating in inclusive meeting environment"
                         className={styles.image}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }}
                     />
-                    */}
                 </div>
 
                 {/* Content Side */}

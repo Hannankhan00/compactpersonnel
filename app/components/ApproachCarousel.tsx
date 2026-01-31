@@ -9,22 +9,26 @@ const approaches = [
     {
         title: "Positive Behaviour Support",
         description: "Reducing challenging behaviours by improving quality of life and meeting individuals' diverse needs.",
-        color: "#7CB9A8"
+        color: "#7CB9A8",
+        image: "/assets/positive-behaviour.png"
     },
     {
         title: "Active Support",
         description: "A person-centred approach designed to help individuals with learning disabilities engage in meaningful activities and relationships.",
-        color: "#8B9A70"
+        color: "#8B9A70",
+        image: "/assets/active-support.png"
     },
     {
         title: "The Learning Hub",
         description: "An inclusive environment that fosters interactive learning and personal development for adults of all ages.",
-        color: "#F5C6D0"
+        color: "#F5C6D0",
+        image: "/assets/learning-hub.png"
     },
     {
         title: "Success Stories",
         description: "Discover the success stories achieved within the Compact Personnel community.",
-        color: "#4A6B3D"
+        color: "#4A6B3D",
+        image: "/assets/success-stories.png"
     }
 ];
 
@@ -63,13 +67,19 @@ export default function ApproachCarousel() {
                     <div
                         key={index}
                         className={styles.approachCard}
-                        style={{ backgroundColor: approach.color }}
                     >
-                        <div className={styles.approachCardImage}></div>
+                        {/* Background Image */}
+                        <img
+                            src={approach.image}
+                            alt={approach.title}
+                            className={styles.approachCardImage}
+                        />
+                        {/* Gradient Overlay */}
+                        <div className={styles.approachCardOverlay}></div>
+                        {/* Content */}
                         <div className={styles.approachCardContent}>
                             <h3 className={styles.approachCardTitle}>{approach.title}</h3>
                             <p className={styles.approachCardDesc}>{approach.description}</p>
-                            <button className={styles.approachCardBtn}>Learn more</button>
                         </div>
                     </div>
                 ))}
@@ -87,13 +97,19 @@ export default function ApproachCarousel() {
                             <div
                                 key={index}
                                 className={styles.approachCardMobile}
-                                style={{ backgroundColor: approach.color }}
                             >
-                                <div className={styles.approachCardImage}></div>
+                                {/* Background Image */}
+                                <img
+                                    src={approach.image}
+                                    alt={approach.title}
+                                    className={styles.approachCardImage}
+                                />
+                                {/* Gradient Overlay */}
+                                <div className={styles.approachCardOverlay}></div>
+                                {/* Content */}
                                 <div className={styles.approachCardContent}>
                                     <h3 className={styles.approachCardTitle}>{approach.title}</h3>
                                     <p className={styles.approachCardDesc}>{approach.description}</p>
-                                    <button className={styles.approachCardBtn}>Learn more</button>
                                 </div>
                             </div>
                         ))}

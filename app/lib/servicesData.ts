@@ -10,7 +10,7 @@ export const servicesData = {
             "Social & Leisure Activities"
         ],
         detailedContent: "We help individuals find suitable housing and provide the necessary support to maintain their tenancy. From budgeting and cooking to accessing education and employment, our staff empower individuals to lead fulfilling lives in their local communities.",
-        image: "/assets/supported-living.jpg"
+        image: "/assets/supported-living.png"
     },
     "domiciliary-care": {
         title: "Domiciliary Care",
@@ -23,7 +23,7 @@ export const servicesData = {
             "Companionship"
         ],
         detailedContent: "Our domiciliary care services are tailored to meet your specific needs. whether you need a 15-minute check-in or 24-hour support. We work around your routine to ensure you feel safe, comfortable, and independent at home.",
-        image: "/assets/domiciliary-care.jpg"
+        image: "/assets/here-to-help.png"
     },
     "complex-care": {
         title: "Complex Care",
@@ -36,7 +36,7 @@ export const servicesData = {
             "24/7 Clinical Oversight"
         ],
         detailedContent: "Our complex care team consists of highly trained carers and nurses who are experienced in managing intricate health conditions. We work closely with other healthcare professionals to deliver a seamless, integrated care package that promotes the best possible health outcomes.",
-        image: "/assets/complex-care.jpg"
+        image: "/assets/positive-behaviour.png"
     },
     "mental-health-support": {
         title: "Mental Health Support",
@@ -49,7 +49,7 @@ export const servicesData = {
             "Community Re-integration"
         ],
         detailedContent: "We understand that mental health journeys are personal. Our support is flexible and adapts to the changing needs of each individual. We focus on building resilience, coping strategies, and social connections to promote long-term recovery.",
-        image: "/assets/mental-health.jpg"
+        image: "/assets/equality-diversity.png"
     },
     "live-in-care": {
         title: "Live in Care",
@@ -62,7 +62,7 @@ export const servicesData = {
             "Lifestyle Maintenance"
         ],
         detailedContent: "Live-in care is a popular alternative to residential care homes. It offers a higher level of personal attention and flexibility. Your carer is there to help with personal care, housekeeping, outings, and companionship, ensuring you can live life on your own terms.",
-        image: "/assets/live-in-care.jpg"
+        image: "/assets/active-support.png"
     },
     "respite-care": {
         title: "Respite Care",
@@ -75,7 +75,7 @@ export const servicesData = {
             "Holiday Cover"
         ],
         detailedContent: "Whether you need coverage for a few days or a few weeks, our respite care services provide a safe and welcoming environment. We ensure that care routines are maintained so that the transition is smooth and stress-free for everyone involved.",
-        image: "/assets/respite-care.jpg"
+        image: "/assets/learning-hub.png"
     },
     "palliative-end-of-life-care": {
         title: "Palliative & End of Life Care",
@@ -88,7 +88,7 @@ export const servicesData = {
             "Dignity & Respect Focus"
         ],
         detailedContent: "Our team provides sensitive and compassionate care to ensure comfort and dignity during this difficult time. We work collaboratively with palliative care teams, GPs, and district nurses to manage symptoms and allow individuals to pass away peacefully in their chosen environment.",
-        image: "/assets/palliative-care.jpg"
+        image: "/assets/referral-bg.png"
     },
     "hospital-to-home": {
         title: "Hospital to Home",
@@ -101,7 +101,7 @@ export const servicesData = {
             "Confidence Building"
         ],
         detailedContent: "Returning home after a hospital stay can be daunting. Our team helps to ensure that your home is ready and that you have the right support in place to aid your recovery and prevent readmission. We focus on reablement, helping you regain your independence and confidence.",
-        image: "/assets/hospital-to-home.jpg"
+        image: "/assets/trusted-team.png"
     }
 };
 

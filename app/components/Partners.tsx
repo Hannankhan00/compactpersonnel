@@ -5,22 +5,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import FadeIn from './FadeIn';
 import styles from '../page.module.css';
 
-// Placeholder data for partners. 
-// In a real app, these would be image imports or URLs.
+// Placeholder data for partners with images
 const partners = [
-    { name: "Bild Member", color: "#2563eb" },
-    { name: "Investors in Diversity", color: "#be185d" },
-    { name: "Disability Confident", color: "#7e22ce" },
-    { name: "STOMP", color: "#be123c" },
-    { name: "Restraint Reduction Network", color: "#16a34a" },
-    { name: "ASDAN", color: "#ea580c" },
-    // Duplicate for seamless loop effect if needed, though we will handle logic for circular
-    { name: "Bild Member", color: "#2563eb" },
-    { name: "Investors in Diversity", color: "#be185d" },
-    { name: "Disability Confident", color: "#7e22ce" },
-    { name: "STOMP", color: "#be123c" },
-    { name: "Restraint Reduction Network", color: "#16a34a" },
-    { name: "ASDAN", color: "#ea580c" },
+    { name: "Bild Member", color: "#2563eb", image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=120&h=80&fit=crop" },
+    { name: "Investors in Diversity", color: "#be185d", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=120&h=80&fit=crop" },
+    { name: "Disability Confident", color: "#7e22ce", image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=120&h=80&fit=crop" },
+    { name: "STOMP", color: "#be123c", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=120&h=80&fit=crop" },
+    { name: "Restraint Reduction Network", color: "#16a34a", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&h=80&fit=crop" },
+    { name: "ASDAN", color: "#ea580c", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=120&h=80&fit=crop" },
+    // Duplicate for seamless loop effect
+    { name: "Bild Member", color: "#2563eb", image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=120&h=80&fit=crop" },
+    { name: "Investors in Diversity", color: "#be185d", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=120&h=80&fit=crop" },
+    { name: "Disability Confident", color: "#7e22ce", image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=120&h=80&fit=crop" },
+    { name: "STOMP", color: "#be123c", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=120&h=80&fit=crop" },
+    { name: "Restraint Reduction Network", color: "#16a34a", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&h=80&fit=crop" },
+    { name: "ASDAN", color: "#ea580c", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=120&h=80&fit=crop" },
 ];
 
 export default function Partners() {
@@ -109,11 +108,15 @@ export default function Partners() {
                             <div key={i} className={styles.partnerLogo}>
                                 <div
                                     className={styles.logoPlaceholder}
-                                    style={{ color: partner.color }}
+                                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}
                                 >
-                                    {/* In real app, <Image src={...} /> */}
-                                    <span style={{ fontSize: '1.5rem', fontWeight: 600 }}>
-                                        {partner.name.split(' ')[0]}
+                                    <img
+                                        src={partner.image}
+                                        alt={partner.name}
+                                        style={{ width: '100px', height: '70px', objectFit: 'cover', borderRadius: '8px' }}
+                                    />
+                                    <span style={{ fontSize: '0.75rem', fontWeight: 600, color: partner.color, textAlign: 'center' }}>
+                                        {partner.name}
                                     </span>
                                 </div>
                             </div>

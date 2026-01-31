@@ -6,16 +6,19 @@ import styles from './ComplexCareHero.module.css';
 export default function ComplexCareHero() {
     return (
         <section className={styles.heroSection}>
-            {/* Background Gradient */}
-            <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                background: 'linear-gradient(135deg, #1e3a8a 0%, #000000 100%)', // Slightly different darker blue for this section
-                zIndex: 1
-            }} />
+            {/* Zooming Background Image */}
+            <motion.div
+                className={styles.heroImageContainer}
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.1 }}
+                transition={{ duration: 7, ease: "easeInOut" }}
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=1080&fit=crop"
+                    alt="Complex Care and Mental Health Support"
+                    className={styles.heroImage}
+                />
+            </motion.div>
 
             <div className={styles.overlay}></div>
 

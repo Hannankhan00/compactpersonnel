@@ -8,16 +8,14 @@ import InteractiveButton from './InteractiveButton';
 export default function HeadOfficeLocation() {
     const [mapType, setMapType] = useState<'map' | 'satellite'>('map');
 
-    // Google Maps Embed URL for "Compact Personnel" or the address
-    // We use a base URL and toggle the view parameter (!5e0! for map, !5e1! for satellite usually)
-    const baseMapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2377.375624728564!2d-2.227480223027984!3d53.42581676884042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb3a0de17822b%3A0x63319074b6ce560!2sCompact%20Personnel%20Ltd!5e0!3m2!1sen!2suk!4v1706280000000!5m2!1sen!2suk";
+    // Google Maps Embed URL for Ivy Mill Business Centre, Failsworth
+    const baseMapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.5!2d-2.1547!3d53.5089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb1c1c1c1c1c1%3A0x1234567890abcdef!2sIvy%20Mill%20Business%20Centre%2C%20Crown%20St%2C%20Failsworth%2C%20Manchester%20M35%209BG!5e0!3m2!1sen!2suk!4v1706280000000!5m2!1sen!2suk";
 
     const mapSrc = mapType === 'satellite'
         ? baseMapSrc.replace('!5e0!', '!5e1!')
         : baseMapSrc;
 
-    // Direct link for the "Get Directions" button
-    const directionsUrl = "https://www.google.com/maps/dir//Compact+Personnel+Ltd,+A18+The+Embankment,+Vale+Rd,+Heaton+Mersey,+Stockport+SK4+3GN/@53.4258136,-2.2274802,17z";
+    const directionsUrl = "https://www.google.com/maps/dir//Ivy+Mill+Business+Centre,+Crown+St,+Failsworth,+Manchester+M35+9BG/@53.5089,-2.1547,17z";
 
     return (
         <section className={styles.section}>
@@ -32,8 +30,8 @@ export default function HeadOfficeLocation() {
                 <div className={styles.headerContent}>
                     <h2 className={styles.title}>Head Office</h2>
                     <p className={styles.address}>
-                        Compact Personnel Ltd, 1st Floor, A18 The Embankment, Riverside, Off Vale Road,<br />
-                        Heaton Mersey, Stockport, SK4 3GN United Kingdom
+                        Compact Personnel, Ivy Mill Business Centre, Sc1-9,<br />
+                        Crown St, Failsworth, Manchester M35 9BG, United Kingdom
                     </p>
                 </div>
                 <div className={styles.buttonWrapper}>

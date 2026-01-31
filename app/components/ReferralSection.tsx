@@ -7,9 +7,13 @@ import InteractiveButton from './InteractiveButton';
 export default function ReferralSection() {
     return (
         <section className={styles.referralSection}>
-            {/* Background Image Placeholder */}
+            {/* Background Image */}
             <div className={styles.referralBackground}>
-                {/* User will add image here */}
+                <img
+                    src="/assets/referral-bg.png"
+                    alt="Care worker walking with supported person through garden"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
             </div>
 
             {/* Bottom blur overlay */}
@@ -45,7 +49,7 @@ export default function ReferralSection() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
                 >
-                    <InteractiveButton text="Start a Referral" />
+                    <InteractiveButton text="Start a Referral" href="/start-referral" />
                 </motion.div>
             </div>
         </section>

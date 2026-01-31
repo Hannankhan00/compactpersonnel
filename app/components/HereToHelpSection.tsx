@@ -7,9 +7,13 @@ import InteractiveButton from './InteractiveButton';
 export default function HereToHelpSection() {
     return (
         <section className={styles.hereToHelpSection}>
-            {/* Background Image Placeholder */}
+            {/* Background Image */}
             <div className={styles.hereToHelpBackground}>
-                {/* User will add image here */}
+                <img
+                    src="/assets/here-to-help.png"
+                    alt="Care worker providing compassionate support"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
             </div>
 
             {/* Bottom blur overlay */}
@@ -43,7 +47,7 @@ export default function HereToHelpSection() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
                 >
-                    <InteractiveButton text="Get in touch" />
+                    <InteractiveButton text="Get in touch" href="/contact" />
                 </motion.div>
             </div>
         </section>

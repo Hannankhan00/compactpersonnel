@@ -42,17 +42,12 @@ export default function RecognisedSection() {
 
                 {/* Image Side */}
                 <div className={styles.imageSide}>
-                    {/* Replace this placeholder with actual image later */}
-                    <div className={styles.imagePlaceholder}>
-                        Image placeholder<br />Add your image here
-                    </div>
-                    {/* Uncomment and use this when you have the image:
-                    <img 
-                        src="/assets/recognised-image.jpg" 
-                        alt="Hands helping" 
+                    <img
+                        src="/assets/recognised-excellence.png"
+                        alt="Hands joined together symbolizing unity and support"
                         className={styles.image}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }}
                     />
-                    */}
                 </div>
             </motion.div>
         </section>

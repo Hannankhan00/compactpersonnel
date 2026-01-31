@@ -11,8 +11,12 @@ export default function TrustedSection() {
             <div className={styles.trustedContainer}>
                 {/* Image Side */}
                 <div className={styles.trustedImageWrapper}>
-                    {/* Placeholder for the team image */}
-                    <div className={styles.trustedImagePlaceholder}></div>
+                    <img
+                        src="/assets/trusted-team.png"
+                        alt="Professional care and support team"
+                        className={styles.trustedImagePlaceholder}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }}
+                    />
                 </div>
 
                 {/* Content Side */}
@@ -45,7 +49,7 @@ export default function TrustedSection() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <InteractiveButton text="Learn more" />
+                        <InteractiveButton text="Learn more" href="/why-choose-us" />
                     </motion.div>
                 </div>
             </div>

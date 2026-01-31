@@ -13,7 +13,8 @@ const services = Object.entries(servicesData).map(([slug, data]) => ({
     title: data.title,
     description: data.description,
     color: "#0f4c81", // Uniform brand color or rotate colors if preferred
-    slug: slug
+    slug: slug,
+    image: data.image // Add image from servicesData
 }));
 
 export default function ServiceCarousel() {
@@ -108,7 +109,20 @@ export default function ServiceCarousel() {
                                 flex: '0 0 var(--slide-width)' // Preserve sizing wrapper logic if needed
                             }}
                         >
-                            <div className={styles.serviceCard} style={{ backgroundColor: service.color }}>
+                            <div className={styles.serviceCard} style={{ position: 'relative', overflow: 'hidden' }}>
+                                {/* Background Image */}
+                                <img
+                                    src={service.image}
+                                    alt={service.title}
+                                    style={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        left: 0,
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover'
+                                    }}
+                                />
                                 <div className={styles.serviceCardOverlay}>
                                     <h3 className={styles.serviceCardTitle}>{service.title}</h3>
                                     <p className={styles.serviceCardDesc}>{service.description}</p>

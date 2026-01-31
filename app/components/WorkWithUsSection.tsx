@@ -7,9 +7,13 @@ import InteractiveButton from './InteractiveButton';
 export default function WorkWithUsSection() {
     return (
         <section className={styles.workWithUsSection}>
-            {/* Background Image Placeholder */}
+            {/* Background Image */}
             <div className={styles.workWithUsBackground}>
-                {/* User will add image here */}
+                <img
+                    src="/assets/work-with-us-bg.png"
+                    alt="Care workers supporting individuals during activities"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
             </div>
 
             {/* Bottom blur overlay */}
@@ -44,7 +48,7 @@ export default function WorkWithUsSection() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
                 >
-                    <InteractiveButton text="Apply Now!" />
+                    <InteractiveButton text="Contact Us" href="/contact" />
                 </motion.div>
             </div>
         </section>

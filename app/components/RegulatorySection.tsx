@@ -28,19 +28,13 @@ export default function RegulatorySection() {
                     </p>
                 </div>
 
-                {/* Image Side - Placeholder for now */}
+                {/* Image Side */}
                 <div className={styles.imageSide}>
-                    {/* Replace this placeholder with actual image later */}
-                    <div className={styles.imagePlaceholder}>
-                        Image placeholder<br />Add your image here
-                    </div>
-                    {/* Uncomment and use this when you have the image:
-                    <img 
-                        src="/assets/regulatory-image.jpg" 
-                        alt="Person enjoying outdoors" 
+                    <img
+                        src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=500&fit=crop"
+                        alt="Healthcare and regulatory compliance"
                         className={styles.image}
                     />
-                    */}
                 </div>
             </motion.div>
         </section>

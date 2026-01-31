@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import styles from '../page.module.css';
-import { ArrowRight } from 'lucide-react';
+import InteractiveButton from './InteractiveButton';
 
 export default function WhyChooseSection() {
     return (
@@ -24,24 +24,9 @@ export default function WhyChooseSection() {
                     needs and your preferences. We provide lifelong, person-centered support,
                     empowering adults of all ages to live with support in a community setting.
                 </p>
-                <motion.button
-                    className={styles.whyChooseButton}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onMouseMove={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                        e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                    }}
-                >
-                    <span className={styles.whyChooseButtonText}>Learn more</span>
-                    <span className={styles.whyChooseButtonArrow}>
-                        <ArrowRight size={18} strokeWidth={2.5} />
-                    </span>
-                    <div className={styles.whyChooseButtonGlow}></div>
-                </motion.button>
+                <div style={{ marginTop: '2rem' }}>
+                    <InteractiveButton text="Learn more" href="/why-choose-us" />
+                </div>
             </motion.div>
 
             {/* Image */}
@@ -52,10 +37,12 @@ export default function WhyChooseSection() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                 viewport={{ once: true, margin: "-100px" }}
             >
-                {/* Placeholder - User can add image later */}
-                <div className={styles.whyChooseImagePlaceholder}>
-                    Image: Outdoor Activities
-                </div>
+                <img
+                    src="/assets/outdoor-activities.png"
+                    alt="Group enjoying outdoor activities - hiking, cycling in the Peak District"
+                    className={styles.whyChooseImagePlaceholder}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }}
+                />
             </motion.div>
         </section>
     );

@@ -8,27 +8,31 @@ import styles from './LocationsList.module.css';
 const locations = [
     {
         year: '2023',
-        name: 'The Embankment',
-        address: 'Heaton Mersey, Stockport SK4 3GN',
-        type: 'Head Office & Training'
+        name: 'Ivy Mill Business Centre',
+        address: 'Crown St, Failsworth, Manchester M35 9BG',
+        type: 'Head Office & Training',
+        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop'
     },
     {
         year: '2024',
         name: 'Manchester Central',
         address: 'Manchester City Centre',
-        type: 'Supported Living'
+        type: 'Supported Living',
+        image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop'
     },
     {
         year: '2025',
         name: 'Cheshire East',
         address: 'Macclesfield, Cheshire',
-        type: 'Residential Care'
+        type: 'Residential Care',
+        image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop'
     },
     {
         year: '2025',
         name: 'Trafford House',
         address: 'Sale, Trafford',
-        type: 'Supported Living'
+        type: 'Supported Living',
+        image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&h=300&fit=crop'
     }
 ];
 
@@ -62,9 +66,16 @@ export default function LocationsList() {
                                 </div>
                             </div>
                             <div className={styles.imageSide}>
-                                <div className={styles.imagePlaceholder}>
-                                    Location Image
-                                </div>
+                                <img
+                                    src={loc.image}
+                                    alt={loc.name}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        borderRadius: '12px'
+                                    }}
+                                />
                             </div>
                         </motion.div>
                     ))}

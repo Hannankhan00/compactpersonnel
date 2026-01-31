@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Twitter, Linkedin } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -18,20 +19,42 @@ export default function Footer() {
                 <div className={styles.contactInfo}>
                     <div className={styles.contactItem}>
                         <span className={styles.label}>Call us</span>
-                        <a href="tel:01617060360" className={styles.value}>0161 706 0360</a>
+                        <a href="tel:01614785814" className={styles.value}>0161 478 5814</a>
                     </div>
 
                     <div className={styles.contactItem}>
                         <span className={styles.label}>Email us</span>
-                        <a href="mailto:contact@compactpersonnel.co.uk" className={styles.value}>contact@compactpersonnel.co.uk</a>
+                        <a href="mailto:info@compactpersonnel.co.uk" className={styles.value}>info@compactpersonnel.co.uk</a>
                     </div>
 
                     <div className={styles.contactItem}>
                         <span className={styles.label}>Find us at</span>
                         <p className={styles.addressValue}>
-                            A18, The Embankment, Business Park, Riverview,<br />
-                            Heaton Mersey, Stockport SK4 3GN
+                            Ivy Mill Business Centre, Sc1-9, Crown St,<br />
+                            Failsworth, Manchester M35 9BG
                         </p>
+                    </div>
+
+                    {/* Social Media Links */}
+                    <div className={styles.socialLinks}>
+                        <a
+                            href="https://x.com/CompactPsnl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.socialIcon}
+                            aria-label="Follow us on X (Twitter)"
+                        >
+                            <Twitter size={20} />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/company/compact-personnel/about/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.socialIcon}
+                            aria-label="Follow us on LinkedIn"
+                        >
+                            <Linkedin size={20} />
+                        </a>
                     </div>
 
                     <div className={styles.copyrightDesktop}>
