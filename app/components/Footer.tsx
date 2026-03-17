@@ -30,17 +30,15 @@ export default function Footer() {
                     <div className={styles.contactItem}>
                         <span className={styles.label}>Find us at</span>
                         <p className={styles.addressValue}>
-                            Ivy Mill Business Centre, Sc1-9, Crown St,<br />
-                            Failsworth, Manchester M35 9BG
+                            Hilton House Office 1, B Block, 4th Floor,
+                            Lord Street, Stockport, England, SK1 3NA
                         </p>
                     </div>
 
                     {/* Social Media Links */}
                     <div className={styles.socialLinks}>
                         <a
-                            href="https://x.com/CompactPsnl"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href=""
                             className={styles.socialIcon}
                             aria-label="Follow us on X (Twitter)"
                         >
@@ -58,7 +56,7 @@ export default function Footer() {
                     </div>
 
                     <div className={styles.copyrightDesktop}>
-                        © 2026 Compact Personnel All rights reserved.
+                        © Compact Personnel All rights reserved.
                     </div>
                 </div>
 
@@ -90,7 +88,7 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.copyrightMobile}>
-                    © 2026 Compact Personnel All rights reserved.
+                    © Compact Personnel All rights reserved.
                 </div>
             </motion.div>
         </footer>

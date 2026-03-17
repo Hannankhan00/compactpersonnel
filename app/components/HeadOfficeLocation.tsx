@@ -8,14 +8,14 @@ import InteractiveButton from './InteractiveButton';
 export default function HeadOfficeLocation() {
     const [mapType, setMapType] = useState<'map' | 'satellite'>('map');
 
-    // Google Maps Embed URL for Ivy Mill Business Centre, Failsworth
-    const baseMapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.5!2d-2.1547!3d53.5089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb1c1c1c1c1c1%3A0x1234567890abcdef!2sIvy%20Mill%20Business%20Centre%2C%20Crown%20St%2C%20Failsworth%2C%20Manchester%20M35%209BG!5e0!3m2!1sen!2suk!4v1706280000000!5m2!1sen!2suk";
+    // Google Maps Embed URL for Hilton House, Stockport
+    const baseMapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.5!2d-2.159274!3d53.40759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHilton%20House%20Office%201%2C%20B%20Block%2C%204th%20Floor%2C%20Lord%20Street%2C%20Stockport%2C%20England%2C%20SK1%203NA!5e0!3m2!1sen!2suk!4v1706280000000!5m2!1sen!2suk";
 
     const mapSrc = mapType === 'satellite'
         ? baseMapSrc.replace('!5e0!', '!5e1!')
         : baseMapSrc;
 
-    const directionsUrl = "https://www.google.com/maps/dir//Ivy+Mill+Business+Centre,+Crown+St,+Failsworth,+Manchester+M35+9BG/@53.5089,-2.1547,17z";
+    const directionsUrl = "https://www.google.com/maps/dir//Hilton+House+Office+1+B+Block+4th+Floor+Lord+Street+Stockport+SK1+3NA/@53.40759,-2.159274,17z";
 
     return (
         <section className={styles.section}>
@@ -30,8 +30,8 @@ export default function HeadOfficeLocation() {
                 <div className={styles.headerContent}>
                     <h2 className={styles.title}>Head Office</h2>
                     <p className={styles.address}>
-                        Compact Personnel, Ivy Mill Business Centre, Sc1-9,<br />
-                        Crown St, Failsworth, Manchester M35 9BG, United Kingdom
+                        Compact Personnel, Hilton House Office 1, B Block, 4th Floor,<br />
+                        Lord Street, Stockport, England, SK1 3NA
                     </p>
                 </div>
                 <div className={styles.buttonWrapper}>

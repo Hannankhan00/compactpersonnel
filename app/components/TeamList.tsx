@@ -17,46 +17,34 @@ type TeamMember = {
 const TEAM_MEMBERS: TeamMember[] = [
     {
         id: 1,
-        name: "Andrew Milne",
+        name: "Eileen Morton",
         role: "Director",
-        description: "Andrew sits on the Board of Directors and plays a key role in strategic decision-making. With extensive experience in the sector, he focuses on ensuring the organisation's values are upheld across all services. He is passionate about person-centred care and drives initiatives that empower the people we support.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces"
+        description: "Eileen sits on the Board of Directors and plays a key role in strategic decision-making. With extensive experience in the sector, she focuses on ensuring the organisation's values are upheld across all services. She is passionate about person-centred care and drives initiatives that empower the people we support.",
     },
     {
         id: 2,
-        name: "Peter Cammack",
-        role: "Director/Registered Manager",
-        description: "As a Director and Registered Manager, Peter combines leadership with hands-on oversight of care quality. He ensures regulatory compliance while fostering a culture of excellence. Peter's dual role allows him to bridge the gap between organisational strategy and day-to-day operations effectively.",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=faces"
+        name: "Jude Onorihewe",
+        role: "Operational Director",
+        description: "As Operational Director, Jude combines leadership with hands-on oversight of care quality. He ensures regulatory compliance while fostering a culture of excellence. His role allows him to bridge the gap between organisational strategy and day-to-day operations effectively.",
     },
     {
         id: 3,
-        name: "Liz Done",
+        name: "Mahreen Munier",
         role: "Registered Manager",
-        description: "Liz is a dedicated Registered Manager who leads her team with compassion and professionalism. She is responsible for the operational management of the service, ensuring that every individual receives the highest standard of support tailored to their unique needs.",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces"
+        description: "Mahreen is a dedicated Registered Manager who leads her team with compassion and professionalism. She is responsible for the operational management of the service, ensuring that every individual receives the highest standard of support tailored to their unique needs.",
     },
     {
         id: 4,
-        name: "James Brown",
-        role: "Registered Manager",
-        description: "James brings energy and expertise to his role as Registered Manager. He is committed to staff development and maintaining a supportive environment for both the team and the people they support. His focus is on achieving positive outcomes and promoting independence.",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=faces"
+        name: "Abeer Ashraf",
+        role: "HR Manager",
+        description: "Abeer oversees all human resources operations, ensuring the organisation attracts and retains top talent. Her strong organisational skills and dedication to staff well-being make her an invaluable asset in maintaining a supportive and professional working environment.",
     },
     {
         id: 5,
-        name: "Sarah Johnson",
-        role: "Operations Manager",
-        description: "Sarah oversees the daily operations across multiple services, ensuring efficiency and quality. Her strong organizational skills and dedication to the team make her an invaluable asset in maintaining smooth service delivery and high standards of care.",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces"
+        name: "Abu Bakr Riaz",
+        role: "Deputy Manager",
+        description: "Abu Bakr supports the management team in the day-to-day running of services. He is committed to staff development and maintaining a supportive environment for both the team and the people they support. His focus is on achieving positive outcomes and promoting independence.",
     },
-    {
-        id: 6,
-        name: "Michael Chen",
-        role: "Team Leader",
-        description: "Michael leads his team by example, providing mentorship and guidance on the ground. He is deeply committed to the well-being of the supported individuals and works closely with support workers to implement effective care plans.",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=faces"
-    }
 ];
 
 export default function TeamList() {

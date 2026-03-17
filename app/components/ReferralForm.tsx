@@ -77,16 +77,12 @@ Level of Support: ${formData.levelOfSupport}
         const subject = `Referral Submission from ${formData.referrerFirstName} ${formData.referrerSurname}`;
 
         // Create Gmail Compose URL
-        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=info@compactpersonnel.co.uk&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=referrals@compactpersonnel.co.uk&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
         // Open Gmail in a new tab
         window.open(gmailLink, '_blank');
 
-        // Show confirmation
-        setTimeout(() => {
-            alert('We have opened a Gmail window for you to send the referral. Please review and click Send.');
-            setIsSubmitting(false);
-        }, 500);
+        setIsSubmitting(false);
     };
 
     return (
@@ -397,7 +393,7 @@ Level of Support: ${formData.levelOfSupport}
 
             <p className={styles.disclaimer}>
                 By clicking submit, your default email client will open with the form data pre-filled.
-                You can review and send the email to <strong>info@compactpersonnel.co.uk</strong>.
+                You can review and send the email to <strong>referrals@compactpersonnel.co.uk</strong>.
             </p>
 
             <div className={styles.submitBtnContainer}>

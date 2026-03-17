@@ -114,6 +114,7 @@ export default function ServiceCarousel() {
                                 <img
                                     src={service.image}
                                     alt={service.title}
+                                    loading="lazy"
                                     style={{
                                         position: 'absolute',
                                         top: 0,

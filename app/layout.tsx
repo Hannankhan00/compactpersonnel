@@ -9,6 +9,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://compactpersonnel.co.uk'),
   title: "Compact Personnel",
   description: "Helping adults with complex needs achieve incredible outcomes.",
   icons: {

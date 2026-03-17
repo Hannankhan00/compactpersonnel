@@ -8,8 +8,8 @@ import styles from './LocationsList.module.css';
 const locations = [
     {
         year: '2023',
-        name: 'Ivy Mill Business Centre',
-        address: 'Crown St, Failsworth, Manchester M35 9BG',
+        name: 'Hilton House',
+        address: 'Office 1, B Block, 4th Floor, Lord Street, Stockport, England, SK1 3NA',
         type: 'Head Office & Training',
         image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop'
     },

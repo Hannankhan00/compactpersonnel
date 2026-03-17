@@ -47,11 +47,7 @@ ${formData.message}
         // Open Gmail in a new tab
         window.open(gmailLink, '_blank');
 
-        // Show confirmation
-        setTimeout(() => {
-            alert('We have opened a Gmail window for you to send your message. Please review and click Send.');
-            setIsSubmitting(false);
-        }, 500);
+        setIsSubmitting(false);
     };
 
     return (
@@ -78,6 +74,7 @@ ${formData.message}
                         <div className={styles.itemContent}>
                             <span className={styles.itemLabel}>Email Us</span>
                             <a href="mailto:info@compactpersonnel.co.uk" className={styles.itemValue}>info@compactpersonnel.co.uk</a>
+                            <a href="mailto:referrals@compactpersonnel.co.uk" className={styles.itemValue} style={{ marginTop: '0.5rem' }}>referrals@compactpersonnel.co.uk</a>
                         </div>
                     </div>
 
@@ -88,9 +85,9 @@ ${formData.message}
                         <div className={styles.itemContent}>
                             <span className={styles.itemLabel}>Head Office</span>
                             <span className={styles.itemValue}>
-                                Ivy Mill Business Centre, Sc1-9,<br />
-                                Crown St, Failsworth,<br />
-                                Manchester M35 9BG
+                                Hilton House Office 1, B Block,<br />
+                                4th Floor, Lord Street,<br />
+                                Stockport, England, SK1 3NA
                             </span>
                         </div>
                     </div>

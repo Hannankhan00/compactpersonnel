@@ -1,22 +1,22 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import HeroCards from './components/HeroCards';
 import Header from './components/Header';
 import FadeIn from './components/FadeIn';
-import ServiceCarousel from './components/ServiceCarousel';
-import Partners from './components/Partners';
-import WhyChooseSection from './components/WhyChooseSection';
-import WhatWeDoSection from './components/WhatWeDoSection';
-import ApproachCarousel from './components/ApproachCarousel';
-import TrustedSection from './components/TrustedSection';
-import AchievementsSection from './components/AchievementsSection';
-import SuccessStoriesSection from './components/SuccessStoriesSection';
-import TestimonialsSection from './components/TestimonialsSection';
 
-import ReferralSection from './components/ReferralSection';
-import WorkWithUsSection from './components/WorkWithUsSection';
-import Footer from './components/Footer';
-import InteractiveButton from './components/InteractiveButton';
+// Dynamically import below-the-fold components
+const ServiceCarousel = dynamic(() => import('./components/ServiceCarousel'));
+const Partners = dynamic(() => import('./components/Partners'));
+const WhyChooseSection = dynamic(() => import('./components/WhyChooseSection'));
+const WhatWeDoSection = dynamic(() => import('./components/WhatWeDoSection'));
+const ApproachCarousel = dynamic(() => import('./components/ApproachCarousel'));
+const TrustedSection = dynamic(() => import('./components/TrustedSection'));
+const AchievementsSection = dynamic(() => import('./components/AchievementsSection'));
+const SuccessStoriesSection = dynamic(() => import('./components/SuccessStoriesSection'));
+const TestimonialsSection = dynamic(() => import('./components/TestimonialsSection'));
+const ReferralSection = dynamic(() => import('./components/ReferralSection'));
+const WorkWithUsSection = dynamic(() => import('./components/WorkWithUsSection'));
+const Footer = dynamic(() => import('./components/Footer'));
+const InteractiveButton = dynamic(() => import('./components/InteractiveButton'));
 import styles from './page.module.css';
 
 export default function Home() {

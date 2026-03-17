@@ -48,6 +48,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         text="Make a Referral"
                         variant="default" // Using default style button
                         className={styles.heroBtn}
+                        href="/start-referral"
                     />
                 </div>
             </section>
