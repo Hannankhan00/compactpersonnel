@@ -39,12 +39,6 @@ const TEAM_MEMBERS: TeamMember[] = [
         role: "HR Manager",
         description: "Abeer oversees all human resources operations, ensuring the organisation attracts and retains top talent. Her strong organisational skills and dedication to staff well-being make her an invaluable asset in maintaining a supportive and professional working environment.",
     },
-    {
-        id: 5,
-        name: "Abu Bakr Riaz",
-        role: "Deputy Manager",
-        description: "Abu Bakr supports the management team in the day-to-day running of services. He is committed to staff development and maintaining a supportive environment for both the team and the people they support. His focus is on achieving positive outcomes and promoting independence.",
-    },
 ];
 
 export default function TeamList() {
