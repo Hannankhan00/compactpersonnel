@@ -6,7 +6,6 @@ import OurValuesSection from '../components/OurValuesSection';
 import RegulatorySection from '../components/RegulatorySection';
 import EqualitySection from '../components/EqualitySection';
 import RecognisedSection from '../components/RecognisedSection';
-import Partners from '../components/Partners';
 import WorkWithUsSection from '../components/WorkWithUsSection';
 import SuccessStoriesSection from '../components/SuccessStoriesSection';
 import HereToHelpSection from '../components/HereToHelpSection';
@@ -21,7 +20,6 @@ export default function WhyChooseUsPage() {
             <RegulatorySection />
             <EqualitySection />
             <RecognisedSection />
-            <Partners />
             <WorkWithUsSection />
             <SuccessStoriesSection />
             <HereToHelpSection />

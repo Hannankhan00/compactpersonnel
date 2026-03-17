@@ -5,7 +5,6 @@ import FadeIn from './components/FadeIn';
 
 // Dynamically import below-the-fold components
 const ServiceCarousel = dynamic(() => import('./components/ServiceCarousel'));
-const Partners = dynamic(() => import('./components/Partners'));
 const WhyChooseSection = dynamic(() => import('./components/WhyChooseSection'));
 const WhatWeDoSection = dynamic(() => import('./components/WhatWeDoSection'));
 const ApproachCarousel = dynamic(() => import('./components/ApproachCarousel'));
@@ -84,9 +83,6 @@ export default function Home() {
 
       {/* Services Carousel Section */}
       <ServiceCarousel />
-
-      {/* Partners Section */}
-      <Partners />
 
       {/* Why Choose Section */}
       <WhyChooseSection />

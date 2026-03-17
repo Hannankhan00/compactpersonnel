@@ -14,15 +14,15 @@ const achievements = [
 
 export default function AchievementsSection() {
     return (
-        <section className={styles.partnersSection}>
+        <section className={styles.achievementsSection}>
             <div className={styles.trustedContainer} style={{ background: 'transparent', boxShadow: 'none', display: 'block', minHeight: 'auto' }}>
-                <h2 className={styles.partnersTitle} style={{ marginBottom: '3rem' }}>
+                <h2 className={styles.achievementsTitle} style={{ marginBottom: '3rem' }}>
                     Our Achievements
                 </h2>
 
-                <div className={styles.partnersWindow}>
+                <div className={styles.achievementsWindow}>
                     <motion.div
-                        className={styles.partnersTrack}
+                        className={styles.achievementsTrack}
                         animate={{ x: ["0%", "-100%"] }}
                         transition={{
                             repeat: Infinity,
@@ -32,8 +32,8 @@ export default function AchievementsSection() {
                     >
                         {/* Duplicate lists for seamless loop */}
                         {[...achievements, ...achievements, ...achievements].map((item, index) => (
-                            <div key={index} className={styles.partnerLogo}>
-                                <div className={styles.logoPlaceholder} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+                            <div key={index} className={styles.achievementLogo}>
+                                <div className={styles.achievementCard} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
                                     {item.image ? (
                                         <img
                                             src={item.image}
