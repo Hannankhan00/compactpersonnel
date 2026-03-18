@@ -4,37 +4,41 @@ import { useState } from 'react';
 import styles from './ReferralForm.module.css';
 import InteractiveButton from './InteractiveButton';
 
+const initialFormData = {
+    // Referrer details
+    referrerFirstName: '',
+    referrerSurname: '',
+    referrerEmail: '',
+    referrerPhone: '',
+    referrerPosition: '',
+    // Person supported
+    personInitials: '',
+    personAge: '',
+    personGender: '',
+    diagnosis: '',
+    // Current position
+    currentAccommodation: '',
+    sectioned: '',
+    reasonForPlacement: '',
+    disagreements: '',
+    timescale: '',
+    // Accommodation required
+    accommodationType: '',
+    fundingPosition: '',
+    authority: '',
+    dolCopStatus: '',
+    capacityAssessments: '',
+    levelOfSupport: ''
+};
+
 export default function ReferralForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [formData, setFormData] = useState({
-        // Referrer details
-        referrerFirstName: '',
-        referrerSurname: '',
-        referrerEmail: '',
-        referrerPhone: '',
-        referrerPosition: '',
-        // Person supported
-        personInitials: '',
-        personAge: '',
-        personGender: '',
-        diagnosis: '',
-        // Current position
-        currentAccommodation: '',
-        sectioned: '',
-        reasonForPlacement: '',
-        disagreements: '',
-        timescale: '',
-        // Accommodation required
-        accommodationType: '',
-        fundingPosition: '',
-        authority: '',
-        dolCopStatus: '',
-        capacityAssessments: '',
-        levelOfSupport: ''
-    });
+    const [formData, setFormData] = useState(initialFormData);
+    const [formStatus, setFormStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
+        setFormStatus(null);
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
@@ -42,47 +46,33 @@ export default function ReferralForm() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Build email body
-        const emailBody = `
-NEW REFERRAL SUBMISSION
+        try {
+            const response = await fetch('/api/referral', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
 
-=== REFERRER DETAILS ===
-Name: ${formData.referrerFirstName} ${formData.referrerSurname}
-Email: ${formData.referrerEmail}
-Phone: ${formData.referrerPhone}
-Position: ${formData.referrerPosition}
+            const result = await response.json();
 
-=== PERSON SUPPORTED ===
-Initials: ${formData.personInitials}
-Age: ${formData.personAge}
-Gender: ${formData.personGender}
-Diagnosis/Behaviours: ${formData.diagnosis}
+            if (!response.ok) {
+                throw new Error(result.error || 'We could not send your referral right now.');
+            }
 
-=== CURRENT POSITION ===
-Current Accommodation: ${formData.currentAccommodation}
-Sectioned: ${formData.sectioned}
-Reason for Placement: ${formData.reasonForPlacement}
-Disagreements with Provider: ${formData.disagreements}
-Timescale: ${formData.timescale}
-
-=== ACCOMMODATION REQUIRED ===
-Type Required: ${formData.accommodationType}
-Funding Position: ${formData.fundingPosition}
-Authority/Funding Provider: ${formData.authority}
-DOL/COP Status: ${formData.dolCopStatus}
-Capacity Assessments: ${formData.capacityAssessments}
-Level of Support: ${formData.levelOfSupport}
-        `.trim();
-
-        const subject = `Referral Submission from ${formData.referrerFirstName} ${formData.referrerSurname}`;
-
-        // Create Gmail Compose URL
-        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=referrals@compactpersonnel.co.uk&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-
-        // Open Gmail in a new tab
-        window.open(gmailLink, '_blank');
-
-        setIsSubmitting(false);
+            setFormStatus({ type: 'success', message: result.message });
+            setFormData(initialFormData);
+        } catch (error) {
+            setFormStatus({
+                type: 'error',
+                message: error instanceof Error
+                    ? error.message
+                    : 'We could not send your referral right now.'
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -392,13 +382,30 @@ Level of Support: ${formData.levelOfSupport}
             </div>
 
             <p className={styles.disclaimer}>
-                By clicking submit, your default email client will open with the form data pre-filled.
-                You can review and send the email to <strong>referrals@compactpersonnel.co.uk</strong>.
+                Your referral will be sent securely to our team for review.
             </p>
+
+            {formStatus ? (
+                <p
+                    role="status"
+                    aria-live="polite"
+                    style={{
+                        backgroundColor: formStatus.type === 'success' ? '#ecfdf3' : '#fef2f2',
+                        border: `1px solid ${formStatus.type === 'success' ? '#16a34a' : '#dc2626'}`,
+                        color: formStatus.type === 'success' ? '#166534' : '#991b1b',
+                        borderRadius: '10px',
+                        padding: '0.8rem 1rem',
+                        marginBottom: '1rem',
+                        fontSize: '0.95rem'
+                    }}
+                >
+                    {formStatus.message}
+                </p>
+            ) : null}
 
             <div className={styles.submitBtnContainer}>
                 <InteractiveButton
-                    text={isSubmitting ? "Preparing..." : "Submit Application"}
+                    text={isSubmitting ? "Submitting..." : "Submit Application"}
                     type="submit"
                     variant="default"
                 />

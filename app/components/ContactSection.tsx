@@ -6,17 +6,21 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactSection() {
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [formData, setFormData] = useState({
+    const initialFormData = {
         fullName: '',
         email: '',
         phone: '',
         subject: '',
         message: ''
-    });
+    };
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [formData, setFormData] = useState(initialFormData);
+    const [formStatus, setFormStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
+        setFormStatus(null);
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
@@ -24,30 +28,33 @@ export default function ContactSection() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Build email body
-        const emailBody = `
-NEW CONTACT FORM MESSAGE
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
 
-From: ${formData.fullName}
-Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
+            const result = await response.json();
 
-Subject: ${formData.subject}
+            if (!response.ok) {
+                throw new Error(result.error || 'We could not send your message right now.');
+            }
 
-Message:
-${formData.message}
-        `.trim();
-
-        const subject = formData.subject;
-
-        // Create Gmail Compose URL
-        // Format: https://mail.google.com/mail/?view=cm&fs=1&to=TO&su=SUBJECT&body=BODY
-        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=info@compactpersonnel.co.uk&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-
-        // Open Gmail in a new tab
-        window.open(gmailLink, '_blank');
-
-        setIsSubmitting(false);
+            setFormStatus({ type: 'success', message: result.message });
+            setFormData(initialFormData);
+        } catch (error) {
+            setFormStatus({
+                type: 'error',
+                message: error instanceof Error
+                    ? error.message
+                    : 'We could not send your message right now.'
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -107,7 +114,7 @@ ${formData.message}
             {/* Form Column */}
             <div className={styles.formColumn}>
                 <h2 className={styles.formTitle}>Send us a Message</h2>
-                <p className={styles.formSubtitle}>Fill out the form below and your email client will open with the message ready to send.</p>
+                <p className={styles.formSubtitle}>Fill out the form below and your message will be sent directly to our team.</p>
 
                 <form onSubmit={handleSubmit}>
                     <div className={styles.inputGroup}>
@@ -174,8 +181,26 @@ ${formData.message}
                         />
                     </div>
 
+                    {formStatus ? (
+                        <p
+                            role="status"
+                            aria-live="polite"
+                            style={{
+                                backgroundColor: formStatus.type === 'success' ? '#ecfdf3' : '#fef2f2',
+                                border: `1px solid ${formStatus.type === 'success' ? '#16a34a' : '#dc2626'}`,
+                                color: formStatus.type === 'success' ? '#166534' : '#991b1b',
+                                borderRadius: '10px',
+                                padding: '0.8rem 1rem',
+                                marginBottom: '1rem',
+                                fontSize: '0.95rem'
+                            }}
+                        >
+                            {formStatus.message}
+                        </p>
+                    ) : null}
+
                     <InteractiveButton
-                        text={isSubmitting ? "Opening..." : "Send Message"}
+                        text={isSubmitting ? "Sending..." : "Send Message"}
                         type="submit"
                         variant="default"
                     />
