@@ -9,7 +9,6 @@ const WhyChooseSection = dynamic(() => import('./components/WhyChooseSection'));
 const WhatWeDoSection = dynamic(() => import('./components/WhatWeDoSection'));
 const ApproachCarousel = dynamic(() => import('./components/ApproachCarousel'));
 const TrustedSection = dynamic(() => import('./components/TrustedSection'));
-const SuccessStoriesSection = dynamic(() => import('./components/SuccessStoriesSection'));
 const TestimonialsSection = dynamic(() => import('./components/TestimonialsSection'));
 const ReferralSection = dynamic(() => import('./components/ReferralSection'));
 const WorkWithUsSection = dynamic(() => import('./components/WorkWithUsSection'));
@@ -100,9 +99,6 @@ export default function Home() {
 
       {/* Referral Section */}
       <ReferralSection />
-
-      {/* Success Stories Section */}
-      <SuccessStoriesSection />
 
       {/* Testimonials Section */}
       <TestimonialsSection />

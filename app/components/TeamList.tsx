@@ -17,27 +17,39 @@ type TeamMember = {
 const TEAM_MEMBERS: TeamMember[] = [
     {
         id: 1,
+        name: "Ayesha Mumtaz",
+        role: "Admin",
+        description: "Ayesha supports the team across day-to-day administration, coordination, and communication to ensure services run smoothly and efficiently.",
+    },
+    {
+        id: 2,
         name: "Eileen Morton",
         role: "Director",
         description: "Eileen sits on the Board of Directors and plays a key role in strategic decision-making. With extensive experience in the sector, she focuses on ensuring the organisation's values are upheld across all services. She is passionate about person-centred care and drives initiatives that empower the people we support.",
     },
     {
-        id: 2,
+        id: 3,
         name: "Jude Onorihewe",
         role: "Operational Director",
         description: "As Operational Director, Jude combines leadership with hands-on oversight of care quality. He ensures regulatory compliance while fostering a culture of excellence. His role allows him to bridge the gap between organisational strategy and day-to-day operations effectively.",
     },
     {
-        id: 3,
+        id: 4,
         name: "Mahreen Munier",
         role: "Registered Manager",
         description: "Mahreen is a dedicated Registered Manager who leads her team with compassion and professionalism. She is responsible for the operational management of the service, ensuring that every individual receives the highest standard of support tailored to their unique needs.",
     },
     {
-        id: 4,
+        id: 5,
         name: "Abeer Ashraf",
         role: "HR Manager",
         description: "Abeer oversees all human resources operations, ensuring the organisation attracts and retains top talent. Her strong organisational skills and dedication to staff well-being make her an invaluable asset in maintaining a supportive and professional working environment.",
+    },
+    {
+        id: 6,
+        name: "MRS MARYAM MOJISOLA",
+        role: "Registered Nurse",
+        description: "Maryam provides clinical support and works closely with the wider team to ensure safe, person-centred care and positive outcomes for the people we support.",
     },
 ];
 
@@ -64,8 +76,8 @@ export default function TeamList() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     viewport={{ once: true }}
                 >
-                    We're proud to have a team recognised by the National Centre for Diversity and ranked in their
-                    Top 100 Employers Index. Meet our exceptional team below!
+                    We're proud of our dedicated, compassionate team and the positive outcomes they help people achieve every day.
+                    Meet our exceptional team below!
                 </motion.p>
 
                 <div className={styles.teamGrid}>

@@ -7,7 +7,6 @@ import RegulatorySection from '../components/RegulatorySection';
 import EqualitySection from '../components/EqualitySection';
 import RecognisedSection from '../components/RecognisedSection';
 import WorkWithUsSection from '../components/WorkWithUsSection';
-import SuccessStoriesSection from '../components/SuccessStoriesSection';
 import HereToHelpSection from '../components/HereToHelpSection';
 
 export default function WhyChooseUsPage() {
@@ -21,7 +20,6 @@ export default function WhyChooseUsPage() {
             <EqualitySection />
             <RecognisedSection />
             <WorkWithUsSection />
-            <SuccessStoriesSection />
             <HereToHelpSection />
             <Footer />
         </main>
