@@ -47,7 +47,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     },
     {
         id: 6,
-        name: "MRS MARYAM MOJISOLA",
+        name: "Mrs Maryam Mojisola",
         role: "Registered Nurse",
         description: "Maryam provides clinical support and works closely with the wider team to ensure safe, person-centred care and positive outcomes for the people we support.",
     },
