@@ -23,9 +23,9 @@ const TEAM_MEMBERS: TeamMember[] = [
     },
     {
         id: 2,
-        name: "Jude Onorihewe",
-        role: "Operational Director",
-        description: "As Operational Director, Jude combines leadership with hands-on oversight of care quality. He ensures regulatory compliance while fostering a culture of excellence. His role allows him to bridge the gap between organisational strategy and day-to-day operations effectively.",
+        name: "Aimee Green",
+        role: "Business Development Manager",
+        description: "Aimee drives the growth and strategic partnerships of the organisation, identifying new opportunities and building relationships that expand our reach and impact within the communities we serve.",
     },
     {
         id: 3,
@@ -47,9 +47,9 @@ const TEAM_MEMBERS: TeamMember[] = [
     },
     {
         id: 6,
-        name: "Aimee Green",
-        role: "Business Development Manager",
-        description: "Aimee drives the growth and strategic partnerships of the organisation, identifying new opportunities and building relationships that expand our reach and impact within the communities we serve.",
+        name: "Jude Onorihewe",
+        role: "Operational Director",
+        description: "As Operational Director, Jude combines leadership with hands-on oversight of care quality. He ensures regulatory compliance while fostering a culture of excellence. His role allows him to bridge the gap between organisational strategy and day-to-day operations effectively.",
     },
 ];
 
