@@ -16,6 +16,32 @@ export default function VacanciesPage() {
                 <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center', color: '#333' }}>Current Opportunities</h2>
 
                 <div style={{ display: 'grid', gap: '2rem' }}>
+                    {/* Job Card - Occupational Health Adviser */}
+                    <div style={{
+                        padding: '2rem',
+                        borderRadius: '12px',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                        border: '1px solid #eaeaea',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '1rem'
+                    }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+                            <div>
+                                <h3 style={{ fontSize: '1.5rem', color: '#0056b3', marginBottom: '0.5rem' }}>Occupational Health Adviser</h3>
+                                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Type: Full Time</p>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Location: Manchester (Greater Manchester)</p>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Qualification: Min Level 5 Diploma in Health &amp; Social Care (progressing to Level 7)</p>
+                                </div>
+                            </div>
+                            <InteractiveButton text="Apply Now" href="/work-with-us/vacancies/occupational-health-adviser" />
+                        </div>
+                        <p style={{ lineHeight: '1.6', color: '#444' }}>
+                            We are looking for a qualified Occupational Health Adviser to conduct health assessments, manage sickness absence cases, and promote employee wellbeing. You will advise managers and staff on workplace health matters, deliver health surveillance programs, and ensure compliance with occupational health legislation and best practice standards.
+                        </p>
+                    </div>
+
                     {/* Job Card 1 - Health Promotion Officer */}
                     <div style={{
                         padding: '2rem',
