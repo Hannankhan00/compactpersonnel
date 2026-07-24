@@ -18,7 +18,7 @@ export default function NursingVacancyPage() {
                 <div className={styles.jobMeta}>
                     <div className={styles.metaItem}>
                         <span className={styles.metaLabel}>Salary</span>
-                        <span className={styles.metaValue}>£23,000.00 Per Annum</span>
+                        <span className={styles.metaValue}>£25,000.00 Per Annum</span>
                     </div>
                     <div className={styles.metaItem}>
                         <span className={styles.metaLabel}>Job Type</span>
