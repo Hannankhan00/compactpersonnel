@@ -8,14 +8,14 @@ import InteractiveButton from './InteractiveButton';
 export default function HeadOfficeLocation() {
     const [mapType, setMapType] = useState<'map' | 'satellite'>('map');
 
-    // Google Maps Embed URL for Hilton House, Stockport
-    const baseMapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.5!2d-2.159274!3d53.40759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHilton%20House%20Office%201%2C%20B%20Block%2C%204th%20Floor%2C%20Lord%20Street%2C%20Stockport%2C%20England%2C%20SK1%203NA!5e0!3m2!1sen!2suk!4v1706280000000!5m2!1sen!2suk";
+    // Google Maps Embed URL for Office 1, 24 Greek Street, Stockport SK3 8AB
+    const baseMapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.8!2d-2.1650!3d53.4053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb39634df2fa5%3A0x88ea307e5ab9b071!2s24%20Greek%20St%2C%20Stockport%20SK3%208AB!5e0!3m2!1sen!2suk!4v1706280000000!5m2!1sen!2suk";
 
     const mapSrc = mapType === 'satellite'
         ? baseMapSrc.replace('!5e0!', '!5e1!')
         : baseMapSrc;
 
-    const directionsUrl = "https://www.google.com/maps/dir//Hilton+House+Office+1+B+Block+4th+Floor+Lord+Street+Stockport+SK1+3NA/@53.40759,-2.159274,17z";
+    const directionsUrl = "https://www.google.com/maps/dir//Office+1,+24+Greek+Street,+Stockport,+SK3+8AB/@53.4053,-2.1650,17z";
 
     return (
         <section className={styles.section}>
@@ -30,8 +30,8 @@ export default function HeadOfficeLocation() {
                 <div className={styles.headerContent}>
                     <h2 className={styles.title}>Head Office</h2>
                     <p className={styles.address}>
-                        Compact Personnel, Hilton House Office 1, B Block, 4th Floor,<br />
-                        Lord Street, Stockport, England, SK1 3NA
+                        Compact Personnel, Office 1, 24 Greek Street,<br />
+                        Stockport, SK3 8AB
                     </p>
                 </div>
                 <div className={styles.buttonWrapper}>

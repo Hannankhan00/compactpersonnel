@@ -30,8 +30,8 @@ export default function Footer() {
                     <div className={styles.contactItem}>
                         <span className={styles.label}>Find us at</span>
                         <p className={styles.addressValue}>
-                            Hilton House Office 1, B Block, 4th Floor,
-                            Lord Street, Stockport, England, SK1 3NA
+                            Office 1, 24 Greek Street,
+                            Stockport, SK3 8AB
                         </p>
                     </div>
 

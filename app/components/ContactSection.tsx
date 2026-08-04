@@ -92,9 +92,8 @@ export default function ContactSection() {
                         <div className={styles.itemContent}>
                             <span className={styles.itemLabel}>Head Office</span>
                             <span className={styles.itemValue}>
-                                Hilton House Office 1, B Block,<br />
-                                4th Floor, Lord Street,<br />
-                                Stockport, England, SK1 3NA
+                                Office 1, 24 Greek Street,<br />
+                                Stockport, SK3 8AB
                             </span>
                         </div>
                     </div>
