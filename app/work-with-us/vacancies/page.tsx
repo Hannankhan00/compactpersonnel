@@ -16,6 +16,31 @@ export default function VacanciesPage() {
                 <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center', color: '#333' }}>Current Opportunities</h2>
 
                 <div style={{ display: 'grid', gap: '2rem' }}>
+                    {/* Job Card - Psychotherapist / Cognitive Behavioural Therapist (CBT) */}
+                    <div style={{
+                        padding: '2rem',
+                        borderRadius: '12px',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                        border: '1px solid #eaeaea',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '1rem'
+                    }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+                            <div>
+                                <h3 style={{ fontSize: '1.5rem', color: '#0056b3', marginBottom: '0.5rem' }}>Psychotherapist / Cognitive Behavioural Therapist (CBT)</h3>
+                                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Type: Full Time</p>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Location: Manchester / Greater Manchester</p>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Pay: GBP 26,000</p>
+                                </div>
+                            </div>
+                            <InteractiveButton text="Apply Now" href="/work-with-us/vacancies/psychotherapist-cognitive-behavioural-therapist" />
+                        </div>
+                        <p style={{ lineHeight: '1.6', color: '#444' }}>
+                            We are seeking a compassionate, skilled, and dedicated Psychotherapist or Cognitive Behavioural Therapist to join our multidisciplinary team within our Supported Living Services. The successful candidate will provide therapeutic interventions and emotional wellbeing support to adults with a range of complex needs including Autism, Learning Disabilities, ADHD, ODD, OCD, Anxiety, and Trauma.
+                        </p>
+                    </div>
                     {/* Job Card - Dietitian – Supported Living */}
                     <div style={{
                         padding: '2rem',
