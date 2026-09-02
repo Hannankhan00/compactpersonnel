@@ -16,6 +16,32 @@ export default function VacanciesPage() {
                 <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center', color: '#333' }}>Current Opportunities</h2>
 
                 <div style={{ display: 'grid', gap: '2rem' }}>
+                    {/* Job Card - Mental Health Support Worker */}
+                    <div style={{
+                        padding: '2rem',
+                        borderRadius: '12px',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                        border: '1px solid #eaeaea',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '1rem'
+                    }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+                            <div>
+                                <h3 style={{ fontSize: '1.5rem', color: '#0056b3', marginBottom: '0.5rem' }}>Mental Health Support Worker</h3>
+                                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Type: Full Time</p>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Location: Greater Manchester</p>
+                                    <p style={{ color: '#666', fontWeight: 600 }}>Pay: GBP 26,000</p>
+                                </div>
+                            </div>
+                            <InteractiveButton text="Apply Now" href="/work-with-us/vacancies/mental-health-support-worker" />
+                        </div>
+                        <p style={{ lineHeight: '1.6', color: '#444' }}>
+                            We are seeking a caring, reliable and motivated Mental Health Support Worker to join our supported living service in Greater Manchester. You will support adults living with mental health conditions and complex support needs, helping them to maintain their wellbeing, develop independent living skills and achieve their individual goals.
+                        </p>
+                    </div>
+
                     {/* Job Card - Psychotherapist / Cognitive Behavioural Therapist (CBT) */}
                     <div style={{
                         padding: '2rem',
