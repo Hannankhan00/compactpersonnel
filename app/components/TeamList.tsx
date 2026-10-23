@@ -23,33 +23,21 @@ const TEAM_MEMBERS: TeamMember[] = [
     },
     {
         id: 2,
-        name: "Aimee Green",
-        role: "Business Development Manager",
-        description: "Aimee drives the growth and strategic partnerships of the organisation, identifying new opportunities and building relationships that expand our reach and impact within the communities we serve.",
-    },
-    {
-        id: 3,
         name: "Mahreen Munier",
         role: "Registered Manager",
         description: "Mahreen is a dedicated Registered Manager who leads her team with compassion and professionalism. She is responsible for the operational management of the service, ensuring that every individual receives the highest standard of support tailored to their unique needs.",
     },
     {
+        id: 3,
+        name: "Aimee Green",
+        role: "Business Development Manager",
+        description: "Aimee drives the growth and strategic partnerships of the organisation, identifying new opportunities and building relationships that expand our reach and impact within the communities we serve.",
+    },
+    {
         id: 4,
-        name: "Malik Khuram",
+        name: "Abeer Ashraf",
         role: "HR Manager",
-        description: "Malik oversees all human resources operations, ensuring the organisation attracts and retains top talent. His strong organisational skills and dedication to staff well-being make him an invaluable asset in maintaining a supportive and professional working environment.",
-    },
-    {
-        id: 5,
-        name: "Mrs Maryam Mojisola",
-        role: "Registered Nurse",
-        description: "Maryam provides clinical support and works closely with the wider team to ensure safe, person-centred care and positive outcomes for the people we support.",
-    },
-    {
-        id: 6,
-        name: "Jude Onorihewe",
-        role: "Operational Director",
-        description: "As Operational Director, Jude combines leadership with hands-on oversight of care quality. He ensures regulatory compliance while fostering a culture of excellence. His role allows him to bridge the gap between organisational strategy and day-to-day operations effectively.",
+        description: "Abeer oversees all human resources operations, ensuring the organisation attracts and retains top talent. His strong organisational skills and dedication to staff well-being make him an invaluable asset in maintaining a supportive and professional working environment.",
     },
 ];
 
