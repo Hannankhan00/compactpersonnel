@@ -51,7 +51,7 @@ export default function HeroCards() {
                         Get In Touch <ArrowRight size={18} style={{ marginLeft: '5px' }} />
                     </h3>
                     <p className={styles.glassCardText}>
-                        We're here to help and assist you with any of our services.
+                        We&apos;re here to help and assist you with any of our services.
                     </p>
                 </div>
                 <div className={styles.glassCardImage}>

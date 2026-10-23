@@ -1,7 +1,6 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import CareersHero from '../../components/CareersHero';
-import Image from 'next/image';
 import InteractiveButton from '../../components/InteractiveButton';
 
 export default function TrainingPage() {
@@ -69,7 +68,7 @@ export default function TrainingPage() {
                         <div style={{ order: 0 }}> {/* Use order to swap on desktop if needed, simplified here */}
                             <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: '#333' }}>Ongoing Development</h2>
                             <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: '#555', marginBottom: '1.5rem' }}>
-                                Learning doesn't stop after induction. We are committed to your continuous professional development (CPD). We support you to gain nationally recognised qualifications.
+                                Learning doesn&apos;t stop after induction. We are committed to your continuous professional development (CPD). We support you to gain nationally recognised qualifications.
                             </p>
                             <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: '#555' }}>
                                 Whether you want to specialise in a certain area like autism support or aim for management roles, we provide the pathway and funding to help you succeed.

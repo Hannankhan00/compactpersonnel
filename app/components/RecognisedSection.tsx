@@ -20,7 +20,7 @@ export default function RecognisedSection() {
                     <p className={styles.description}>
                         Compact Personnel is an independent organisation 100% owned by its founders. Our Services are
                         Regulated by the Care Quality Commission as High Quality Services. We provide services for over
-                        30 Local Authorities and NHS ICB's. We are one of only a small number of providers trusted to
+                        30 Local Authorities and NHS ICB&apos;s. We are one of only a small number of providers trusted to
                         deliver complex care services on the Greater Manchester Complex Care Framework. In 2024 we gained
                         Investors in People Silver Accreditation for our culture of supporting our people to improve the
                         quality of life for people with a learning disability.

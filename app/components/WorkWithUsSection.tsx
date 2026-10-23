@@ -38,7 +38,7 @@ export default function WorkWithUsSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    We're hiring! Join us in an exciting, dynamic role where you can make a real impact.
+                    We&apos;re hiring! Join us in an exciting, dynamic role where you can make a real impact.
                     With a starting salary of £26,364 per year, no experience is needed as we provide full training.
                 </motion.p>
 

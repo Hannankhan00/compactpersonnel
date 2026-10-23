@@ -102,7 +102,7 @@ export default function ServiceModelContent() {
                     <p className={styles.ctaText}>
                         After completing the referral form, one of our experienced team members will be in touch.
                         Before we can proceed further, we need to make sure the required information is available
-                        to establish whether our model of support would meet your loved one's needs.
+                        to establish whether our model of support would meet your loved one&apos;s needs.
                     </p>
                     <div className={styles.ctaButton}>
                         <InteractiveButton text="Start a Referral" />

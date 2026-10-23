@@ -43,7 +43,7 @@ export default function BenefitsPage() {
                 <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', textAlign: 'center', color: '#333' }}>Why Work With Us?</h2>
                 <p style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 4rem auto', color: '#666', lineHeight: '1.6' }}>
                     At Compact Personnel, we believe that happy, well-supported staff provide the best care.
-                    That's why we invest heavily in your wellbeing and professional development.
+                    That&apos;s why we invest heavily in your wellbeing and professional development.
                 </p>
 
                 <div style={{

@@ -20,10 +20,8 @@ const services = Object.entries(servicesData).map(([slug, data]) => ({
 export default function ServiceCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleItems, setVisibleItems] = useState(3);
-    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setIsMounted(true);
         const handleResize = () => {
             if (window.innerWidth <= 768) {
                 setVisibleItems(1);

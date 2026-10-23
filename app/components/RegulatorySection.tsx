@@ -24,7 +24,7 @@ export default function RegulatorySection() {
                         framework operated by CQC is a positive step on from their previous model,
                         it focuses on ensuring services are <span className={styles.highlight}>Effective, Caring, Safe, Well led &
                             Responsive</span>. We strive to maintain excellent standards across all areas of
-                        CQC's key lines of enquiry.
+                        CQC&apos;s key lines of enquiry.
                     </p>
                 </div>
 

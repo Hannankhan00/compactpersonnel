@@ -64,7 +64,7 @@ export default function TeamList() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     viewport={{ once: true }}
                 >
-                    We're proud of our dedicated, compassionate team and the positive outcomes they help people achieve every day.
+                    We&apos;re proud of our dedicated, compassionate team and the positive outcomes they help people achieve every day.
                     Meet our exceptional team below!
                 </motion.p>
 

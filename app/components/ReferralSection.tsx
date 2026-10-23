@@ -38,9 +38,9 @@ export default function ReferralSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    No one knows your loved one like you do, that's why you're involved from day one.
-                    Whether you're considering our service for the first time or transitioning from another provider,
-                    we're here to support you every step of the way.
+                    No one knows your loved one like you do, that&apos;s why you&apos;re involved from day one.
+                    Whether you&apos;re considering our service for the first time or transitioning from another provider,
+                    we&apos;re here to support you every step of the way.
                 </motion.p>
 
                 <motion.div

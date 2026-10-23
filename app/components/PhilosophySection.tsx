@@ -129,10 +129,10 @@ export default function PhilosophySection() {
                         transition={{ duration: 0.6, delay: 0.5 }}
                         variants={fadeInUp}
                     >
-                        <div className={styles.decorativeQuote}>"</div>
+                        <div className={styles.decorativeQuote}>&quot;</div>
                         <h3 className={styles.cardTitle}>Walking Alongside You</h3>
                         <p className={styles.cardText}>
-                            Compact Personnel exists to walk alongside each person on their journey. We don't just provide care, we partner with individuals and their families to create pathways toward independence, fulfilment, and a life truly worth living.
+                            Compact Personnel exists to walk alongside each person on their journey. We don&apos;t just provide care, we partner with individuals and their families to create pathways toward independence, fulfilment, and a life truly worth living.
                         </p>
                     </motion.div>
                 </div>

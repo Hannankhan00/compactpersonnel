@@ -29,7 +29,7 @@ export default function ContactHero() {
             >
                 <h1 className={styles.title}>Get in Touch</h1>
                 <p className={styles.subtitle}>
-                    Whether you have a question about our services, need support, or just want to say hello, we're here to answer your questions.
+                    Whether you have a question about our services, need support, or just want to say hello, we&apos;re here to answer your questions.
                 </p>
             </motion.div>
         </section>

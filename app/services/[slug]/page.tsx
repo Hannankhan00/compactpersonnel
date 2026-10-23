@@ -5,7 +5,6 @@ import InteractiveButton from '../../components/InteractiveButton';
 import styles from './ServicePage.module.css';
 import { servicesData, ServiceSlug } from '../../lib/servicesData';
 import { Check } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 // Generate static params for all services (SSG)
 export async function generateStaticParams() {
@@ -60,7 +59,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     <p>{data.description}</p>
                     <p>{data.detailedContent}</p>
                     <p>
-                        We understand that every individual is unique. That's why our approach is always person-centered,
+                        We understand that every individual is unique. That&apos;s why our approach is always person-centered,
                         flexible, and adapted to meet changing needs. By focusing on strengths and aspirations,
                         we help people achieve outcomes they never thought possible.
                     </p>

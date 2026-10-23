@@ -28,7 +28,7 @@ export default function HereToHelpSection() {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    We're here to help
+                    We&apos;re here to help
                 </motion.h2>
 
                 <motion.p
@@ -38,7 +38,7 @@ export default function HereToHelpSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    Feel free to reach out if you need any assistance with our services. We're here to help!
+                    Feel free to reach out if you need any assistance with our services. We&apos;re here to help!
                 </motion.p>
 
                 <motion.div

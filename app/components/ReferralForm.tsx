@@ -80,7 +80,7 @@ export default function ReferralForm() {
 
             {/* SECTION 1: Details of the Referrer */}
             <div className={styles.section}>
-                <h3 className={styles.sectionTitle}>First, please enter your details, not those of the person you're supporting.</h3>
+                <h3 className={styles.sectionTitle}>First, please enter your details, not those of the person you&apos;re supporting.</h3>
 
                 <div className={styles.row}>
                     <div className={styles.inputGroup}>
@@ -227,7 +227,7 @@ export default function ReferralForm() {
 
                 <div className={styles.row}>
                     <div className={styles.inputGroup}>
-                        <label className={styles.label}>Is the person currently sectioned? If "Yes" how long have they been sectioned.</label>
+                        <label className={styles.label}>Is the person currently sectioned? If &quot;Yes&quot; how long have they been sectioned.</label>
                         <input
                             type="text"
                             name="sectioned"
@@ -242,7 +242,7 @@ export default function ReferralForm() {
 
                 <div className={styles.row}>
                     <div className={styles.inputGroup}>
-                        <label className={styles.label}>What's the reason for placement being sought?</label>
+                        <label className={styles.label}>What&apos;s the reason for placement being sought?</label>
                         <input
                             type="text"
                             name="reasonForPlacement"
