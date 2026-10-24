@@ -37,7 +37,7 @@ const TEAM_MEMBERS: TeamMember[] = [
         id: 4,
         name: "Abeer Ashraf",
         role: "HR Manager",
-        description: "Abeer oversees all human resources operations, ensuring the organisation attracts and retains top talent. His strong organisational skills and dedication to staff well-being make him an invaluable asset in maintaining a supportive and professional working environment.",
+        description: "Abeer oversees all human resources operations, ensuring the organisation attracts and retains top talent. Her strong organisational skills and dedication to staff well-being make her an invaluable asset in maintaining a supportive and professional working environment.",
     },
 ];
 
